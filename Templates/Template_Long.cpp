@@ -64,7 +64,7 @@ using ld = long double;
 void setIO(string name =""){
 	ios_base::sync_with_stdio(false);
 	cin.tie(nullptr);
-	if (name.size()){
+	if (name.size()){ //For USACO only
 		freopen((name+".in").c_str(),"r",stdin);
 		freopen((name+".out").c_str(),"w",stdout);
 	}
