@@ -62,6 +62,8 @@ using ld = long double;
 #define mtp make_tuple
 
 void setIO(string name =""){
+//Compile with those flags to get the fastest performance
+//g++.exe -std=c++11 -DLOCAL ${file} -o ${file_base_name}.exe -Wl,--stack,268435456 -O2 && ${file_base_name}.exe
 	ios_base::sync_with_stdio(false);
 	cin.tie(nullptr);
 	if (name.size()){ //For USACO only
@@ -78,6 +80,11 @@ void setIO(string name =""){
 	return;
 }
 
+//constant initialization
+const string yes="YES",no="NO";
+const int mod=1e9+7;
+
+//variables used for the current problem
 int t,n;
 
 void solve(){
