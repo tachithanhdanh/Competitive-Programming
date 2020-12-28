@@ -97,12 +97,6 @@ void solve(){
 	}
 	for (int i=1;i<=N;++i){
 		sort(all(v[i]));
-		//cout << i << endl;
-		/*
-		for (pair<int,int> pp: v[i]){
-			cout << pp.f << " " << pp.s << endl;
-		}
-		*/
 	}
 	for (int i=0;i<S;++i){
 		cin >> p >> t;
@@ -114,7 +108,6 @@ void solve(){
 			for (int j=0;j<sz(v[i]);++j){
 				if (v[i][j].f>=sick[i]) break;
 				else {
-					//cerr << v[i][j].s << endl;
 					milkflag[v[i][j].s]=true;
 				}
 			}
@@ -123,23 +116,17 @@ void solve(){
 			}
 		}
 	}
-	//cout << yes << endl;
 	for (int i=1;i<=M;++i){
-		//cout << i << " " << possible[i] << endl;
 		if (possible[i]==S) {
-			//cout << i << endl;
 			badmilk=i; break;
-			//cout << i << endl;
 		}
 	}
-	//cout << sz(badmilk) << endl;
 	for (int i=1;i<=N;++i){
 		if (!sick[i]){
 			flag=false;
 			for (int j=0;j<sz(v[i]);++j){
 				flag = (v[i][j].s == badmilk) || flag;
 			}
-			//if (flag) cerr << i << endl;
 			cnt+=flag;
 		}
 	}
