@@ -1,32 +1,4 @@
-#include <sstream>
-#include <iostream>
-#include <fstream>
-#include <iomanip>
-#include <cstdio>
-#include <cmath>
-#include <cstring>
-#include <cctype>
-#include <climits>
-#include <cfloat>
-#include <string>
-#include <algorithm>
-#include <functional>
-#include <vector>
-#include <list>
-#include <array>
-#include <set>
-#include <map>
-#include <stack>
-#include <queue>
-#include <deque>
-#include <bitset>
-#include <unordered_set>
-#include <unordered_map>
-#include <utility>
-#include <iterator>
-#include <ctime>
-#include <tuple>
-#include <numeric>
+#include<bits/stdc++.h>
  
 using namespace std;
 
@@ -45,7 +17,6 @@ using ld = long double;
 #define hash_map unordered_map
 
 //vector
-#define vt vector
 #define all(x) begin(x), end(x) 
 #define rall(x) (x).rbegin(), (x).rend()
 #define sz(x) (int)(x).size()
@@ -86,6 +57,7 @@ void setIO(string name =""){
 //constant initialization
 const string yes="YES",no="NO";
 const int mod=1e9+7;
+const int maxn=2e5+10;
 
 //variables used for the current problem
 int t,n;
