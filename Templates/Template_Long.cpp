@@ -66,7 +66,7 @@ using ld = long double;
 
 void setIO(string name =""){
 //Compile with those flags to get the fastest performance
-//g++.exe -std=c++11 -DLOCAL ${file} -o ${file_base_name}.exe -Wl,--stack,268435456 -O2 && ${file_base_name}.exe
+//g++.exe -std=c++11 -DLOCAL ${file} -o ${file_base_name}.exe -Wall -Wl,--stack,268435456 -O2 && ${file_base_name}.exe
 	ios_base::sync_with_stdio(false);
 	cin.tie(nullptr);
 	if (name.size()){ //For USACO only
