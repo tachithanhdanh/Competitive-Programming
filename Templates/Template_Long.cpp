@@ -36,8 +36,11 @@ using uint = unsigned int;
 using ull = unsigned long long;
 using ld = long double;
 
-#define ar array
 #define endl "\n" 
+//Make sure to define this 
+//in case you accidentally use endl instead of "\n" to make a new line
+//https://usaco.guide/general/fast-io/#fast-output
+
 #define hash_set unordered_set 
 #define hash_map unordered_map
 
