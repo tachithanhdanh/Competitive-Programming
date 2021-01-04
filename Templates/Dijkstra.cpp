@@ -38,7 +38,7 @@ void solve(){
     for (int i=0;i<M;++i){
     	cin >> a >> b >> c;
     	adj[a].push_back(make_pair(b,c)); //The graph is directed
-    	//If it is undirected include the below line.
+    	//If it is undirected then include the below line.
     	//adj[b].push_back(make_pair(a,c));
     }
     dijkstra(1);
