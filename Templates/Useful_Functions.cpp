@@ -55,7 +55,7 @@ void setIO(string name =""){
 //constant initialization
 const string yes="YES",no="NO";
 const int mod=1e9+7;
-const ll maxn=1e6+10;
+const ll maxn=1e7+10;
 
 //variables used for the current problem
 int n; ll x,m; bool prime[maxn];
@@ -72,9 +72,16 @@ ll sqrt(ll n){
 void sieve(){
 	memset(prime,true,sizeof(prime));
 	prime[0]=prime[1]=false;
-	for (int i=4;i<maxn;i+=2) prime[i]=false;
-	for (int i=6;i<maxn;i+=3) prime[i]=false;
-	for (int i=5;i*i<maxn;i+=2){
+	for (int i=2*2;i<maxn;i+=2) prime[i]=false;
+	for (int i=3*3;i<maxn;i+=3) prime[i]=false;
+	for (int i=2*2;i<maxn;i+=2) prime[i]=false;
+	for (int i=5*5;i<maxn;i+=5) prime[i]=false;
+	for (int i=7*7;i<maxn;i+=7) prime[i]=false;
+	for (int i=11*11;i<maxn;i+=11) prime[i]=false;
+	for (int i=13*13;i<maxn;i+=13) prime[i]=false;
+	for (int i=17*17;i<maxn;i+=17) prime[i]=false;
+	for (int i=19*19;i<maxn;i+=19) prime[i]=false;
+	for (int i=23;i*i<maxn;i+=2){
 		if (prime[i]){
 			for (int j=i*i;j<maxn;j+=i){
 				prime[j]=false;
