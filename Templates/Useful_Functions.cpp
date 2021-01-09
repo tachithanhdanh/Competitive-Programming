@@ -74,23 +74,21 @@ void sieve(){
 	prime[0]=prime[1]=false;
 	for (int i=2*2;i<maxn;i+=2) prime[i]=false;
 	for (int i=3*3;i<maxn;i+=3) prime[i]=false;
-	for (int i=2*2;i<maxn;i+=2) prime[i]=false;
-	for (int i=5*5;i<maxn;i+=5) prime[i]=false;
-	for (int i=7*7;i<maxn;i+=7) prime[i]=false;
-	for (int i=11*11;i<maxn;i+=11) prime[i]=false;
-	for (int i=13*13;i<maxn;i+=13) prime[i]=false;
-	for (int i=17*17;i<maxn;i+=17) prime[i]=false;
-	for (int i=19*19;i<maxn;i+=19) prime[i]=false;
-	for (int i=23;i*i<maxn;i+=2){
+	for (int i=5;i*i<maxn;i+=6){
 		if (prime[i]){
 			for (int j=i*i;j<maxn;j+=i){
 				prime[j]=false;
 			}
 		}
+		if (prime[i+2]){
+			for (int j=(i+2)*(i+2);j<maxn;j+=(i+2)){
+				prime[j]=false;
+			}
+		}	
 	}
 }
 
-ll fast_pow(ll x,uint y) 
+ll fast_pow_without_mod(ll x,uint y) 
 { 
     ll res = 1; // Initialize result 
   
