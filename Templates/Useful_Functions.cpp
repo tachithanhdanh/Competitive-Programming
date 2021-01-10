@@ -88,7 +88,9 @@ void sieve(){
 	}
 }
 
-ll fast_pow_without_mod(ll x,uint y) /* Iterative Function to calculate (x^y) in O(log y) */
+/* Iterative Function to calculate (x^y) in O(log y) */
+//https://www.geeksforgeeks.org/write-an-iterative-olog-y-function-for-powx-y/
+ll fast_pow_without_mod(ll x,uint y) 
 { 
     ll res = 1; // Initialize result 
   
