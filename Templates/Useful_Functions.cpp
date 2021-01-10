@@ -122,6 +122,9 @@ ll fast_pow_with_mod(ll x, uint y)
 	return res;  
 }  
 
+//https://cp-algorithms.com/algebra/module-inverse.html#toc-tgt-2
+//https://www.geeksforgeeks.org/multiplicative-inverse-under-modulo-m/
+//https://vnoi.info/wiki/algo/math/modular-inverse.md#t%C3%ADnh-t%E1%BA%A5t-c%E1%BA%A3-ngh%E1%BB%8Bch-%C4%91%E1%BA%A3o-modulo-m
 ll modular_inverse(ll x){
 	return fast_pow_with_mod(x,MOD-2);
 }
