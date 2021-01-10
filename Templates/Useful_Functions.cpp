@@ -54,7 +54,7 @@ void setIO(string name =""){
 
 //constant initialization
 const string yes="YES",no="NO";
-const int mod=1e9+7;
+const int MOD=1e9+7;
 const ll maxn=1e7+10;
 
 //variables used for the current problem
@@ -88,7 +88,7 @@ void sieve(){
 	}
 }
 
-ll fast_pow_without_mod(ll x,uint y) 
+ll fast_pow_without_mod(ll x,uint y) /* Iterative Function to calculate (x^y) in O(log y) */
 { 
     ll res = 1; // Initialize result 
   
@@ -102,4 +102,27 @@ ll fast_pow_without_mod(ll x,uint y)
         x = x * x; // Change x to x^2 
     } 
     return res; 
-} 
+}
+
+/* Iterative Function to calculate (x^y)%p in O(log y) */
+ll fast_pow_with_mod(ll x, uint y)  
+{  
+    ll res = 1;     // Initialize result  
+  
+    x = x % MOD; // Update x if it is more than or  
+                // equal to p 
+   
+    if (x == 0) return 0; // In case x is divisible by p; 
+  
+    while (y > 0)  
+    {  
+        // If y is odd, multiply x with result  
+        if (y & 1)  
+            res = (res*x) % MOD;  
+  
+        // y must be even now  
+        y = y >> 1; // y = y/2  
+        x = (x*x) % MOD;  
+    }  
+    return res;  
+}  
