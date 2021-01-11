@@ -4,6 +4,10 @@
 using namespace std;
 
 #define endl "\n"
+////Make sure to define this 
+//in case you accidentally use endl instead of "\n" to make a new line
+//https://usaco.guide/general/fast-io/#fast-output
+//https://codelearn.io/sharing/thu-thuat-cpp-hay-trong-lap-trinh-thi-dau-cho-nguoi-moi-bat-dau
 
 using ll = long long;
 
