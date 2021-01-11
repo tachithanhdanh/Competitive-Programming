@@ -1,13 +1,7 @@
-//Source: https://usaco.guide/general/code-con?lang=cpp#c
-//Implementation: https://github.com/bqi343/USACO/blob/master/Implementations/content/contest/TemplateVeryShort.cpp
-#include <bits/stdc++.h> // see C++ Tips & Tricks
+#include <bits/stdc++.h>
 using namespace std;
 
 #define endl "\n"
-////Make sure to define this 
-//in case you accidentally use endl instead of "\n" to make a new line
-//https://usaco.guide/general/fast-io/#fast-output
-//https://codelearn.io/sharing/thu-thuat-cpp-hay-trong-lap-trinh-thi-dau-cho-nguoi-moi-bat-dau
 
 using ll = long long;
 
@@ -24,12 +18,11 @@ using pi = pair<int,int>;
 #define s second
 #define mp make_pair
 
-void setIO(string name = "") { // name is nonempty for Offline Contest file I/O
-	ios_base::sync_with_stdio(false); cin.tie(nullptr); // see Fast Input & Output
-	// alternatively, cin.tie(0)->sync_with_stdio(0);
+void setIO(string name = "") { 
+	ios_base::sync_with_stdio(false); cin.tie(nullptr);
 	if (sz(name)) {
-		freopen((name+".INP").c_str(), "r", stdin); // see Input & Output
-		freopen((name+".OUT").c_str(), "w", stdout);
+		freopen((name+".in").c_str(), "r", stdin);
+		freopen((name+".out").c_str(), "w", stdout);
 	}
 	else{
 		#ifdef LOCAL
