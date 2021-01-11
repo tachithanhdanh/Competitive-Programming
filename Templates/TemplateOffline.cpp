@@ -25,15 +25,15 @@ using pi = pair<int,int>;
 #define mp make_pair
 
 void setIO(string name = "") { // name is nonempty for Offline Contest file I/O
-    ios_base::sync_with_stdio(false); cin.tie(nullptr); // see Fast Input & Output
-    // alternatively, cin.tie(0)->sync_with_stdio(0);
-    if (sz(name)) {
-        freopen((name+".INP").c_str(), "r", stdin); // see Input & Output
-        freopen((name+".OUT").c_str(), "w", stdout);
-    }
-    else{
-    	freopen(input.txt,"r",stdin);
-    }
+	ios_base::sync_with_stdio(false); cin.tie(nullptr); // see Fast Input & Output
+	// alternatively, cin.tie(0)->sync_with_stdio(0);
+	if (sz(name)) {
+		freopen((name+".INP").c_str(), "r", stdin); // see Input & Output
+		freopen((name+".OUT").c_str(), "w", stdout);
+	}
+	else{
+		freopen(input.txt,"r",stdin);
+	}
 }
 
 //constant initialization
@@ -51,7 +51,7 @@ void solve(){
 }
 
 int main() {
-    setIO();
-    solve();
-    return 0;
+	setIO();
+	solve();
+	return 0;
 }
