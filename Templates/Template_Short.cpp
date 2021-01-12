@@ -18,6 +18,13 @@ using pi = pair<int,int>;
 #define s second
 #define mp make_pair
 
+// loops
+#define FOR(i,a,b) for (int i = (a); i < (b); ++i)
+#define F0R(i,a) FOR(i,0,a)
+#define ROF(i,a,b) for (int i = (b)-1; i >= (a); --i)
+#define R0F(i,a) ROF(i,0,a)
+#define trav(a,x) for (auto& a: x)
+
 void setIO(string name = "") { 
 	ios_base::sync_with_stdio(false); cin.tie(nullptr);
 	if (sz(name)) {
