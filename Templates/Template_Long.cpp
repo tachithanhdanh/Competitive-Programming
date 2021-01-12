@@ -35,7 +35,6 @@ using ld = long double;
 #define f first
 #define s second
 #define mp make_pair
-#define mtp make_tuple
 
 // loops
 #define FOR(i,a,b) for (int i = (a); i < (b); ++i)
