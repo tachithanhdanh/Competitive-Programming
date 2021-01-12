@@ -1,38 +1,3 @@
-#include <bits/stdc++.h>
- 
-using namespace std;
-
-using ll = long long;
-using si = short int;
-using uint = unsigned int;
-using ull = unsigned long long;
-using ld = long double;
-
-#define ar array
-#define endl "\n" 
-#define hash_set unordered_set 
-#define hash_map unordered_map
-
-//vector
-#define vt vector
-#define all(x) begin(x), end(x) 
-#define rall(x) (x).rbegin(), (x).rend()
-#define sz(x) (int)(x).size()
-#define rsz resize
-#define pb push_back
-#define pf push_front
-#define ft front()
-#define bk back()
-#define ins insert
-#define lb lower_bound
-#define ub upper_bound
-
-//pairs and tuples
-#define f first
-#define s second
-#define mp make_pair
-#define mtp make_tuple
-
 void setIO(string name =""){
 //Compile with those flags and to get the fastest performance
 //g++.exe -std=c++11 -DLOCAL ${file} -o ${file_base_name}.exe -Wl,--stack,268435456 -O2 && ${file_base_name}.exe
@@ -62,6 +27,7 @@ int n; ll x,m; bool prime[maxn];
 
 
 ll sqrt(ll n){
+	if (n==1 || !n) return n;
 	ll m=sqrt((double)n);
 	for (ll i=m-2;i<=m+2;++i){
 		if (i*i==n) return i;
