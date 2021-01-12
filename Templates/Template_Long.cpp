@@ -14,10 +14,8 @@ using ld = long double;
 //https://usaco.guide/general/fast-io/#fast-output
 //https://codelearn.io/sharing/thu-thuat-cpp-hay-trong-lap-trinh-thi-dau-cho-nguoi-moi-bat-dau
 
-#define hash_set unordered_set 
-#define hash_map unordered_map
-
 //vector
+using vi = vector<int>;
 #define all(x) begin(x), end(x) 
 #define rall(x) (x).rbegin(), (x).rend()
 #define sz(x) (int)(x).size()
@@ -31,7 +29,8 @@ using ld = long double;
 #define lb lower_bound
 #define ub upper_bound
 
-//pairs and tuples
+//pairs
+using pi = pair<int,int>;
 #define f first
 #define s second
 #define mp make_pair
@@ -64,7 +63,7 @@ void setIO(string name =""){
 
 //constant initialization
 const string yes="YES",no="NO";
-const int mod=1e9+7;
+const int mod=1e9+7; //998244353
 const int maxn=2e5+10;
 
 //variables used for the current problem
