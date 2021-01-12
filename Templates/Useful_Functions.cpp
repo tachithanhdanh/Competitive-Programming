@@ -27,6 +27,7 @@ int n; ll x,m; bool prime[maxn];
 
 
 ll sqrt(ll n){
+	assert(n>=0);
 	if (n==1 || !n) return n;
 	ll m=sqrt((double)n);
 	for (ll i=m-2;i<=m+2;++i){
