@@ -63,7 +63,7 @@ void solve(){
 }
 
 int main() {
-	setIO();
+	setIO("baseball");
 	solve();
 	cerr<<"time taken : "<<(float)clock()/CLOCKS_PER_SEC <<" secs"<<endl;
 	return 0;
