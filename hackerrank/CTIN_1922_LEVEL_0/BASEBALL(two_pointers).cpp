@@ -1,33 +1,4 @@
-#include <sstream>
-#include <iostream>
-#include <fstream>
-#include <iomanip>
-#include <cstdio>
-#include <cmath>
-#include <cstring>
-#include <cctype>
-#include <climits>
-#include <cfloat>
-#include <string>
-#include <algorithm>
-#include <functional>
-#include <vector>
-#include <list>
-#include <array>
-#include <set>
-#include <map>
-#include <stack>
-#include <queue>
-#include <deque>
-#include <bitset>
-#include <unordered_set>
-#include <unordered_map>
-#include <utility>
-#include <iterator>
-#include <ctime>
-#include <tuple>
-#include <numeric>
- 
+#include<bits/stdc++.h>
 using namespace std;
 
 using ll = long long;
@@ -78,7 +49,7 @@ void setIO(string name =""){
 	return;
 }
 
-int n,a[1050],l,r,ans; //int cnt;
+int n,a[1050],l,r,ans;
 
 void solve(){
 	cin >> n;
@@ -88,20 +59,18 @@ void solve(){
 	sort(a,a+n);
 	l=1; r=n-1;
 	for (int i=0;i<n;++i){
-		++cnt;
 		for (l=i+1;l<n-1;++l){
 			r=n-1;
 			if (a[l]-a[i]>a[r]-a[l]) break;
 			while (l<r && (a[r]-a[l])>2*(a[l]-a[i]) && (a[l]-a[i]<=a[r]-a[l])){
-				--r; //++cnt;
+				--r;
 			}
 			if (a[l]-a[i]>a[r]-a[l] || l>=r) continue;
 			while (l<r && (a[l]-a[i]<=a[r]-a[l])){
-				--r; ++ans; //++cnt;
+				--r; ++ans;
 			}
 		}
 	}
-	//cerr << cnt << endl;
 	cout << ans << endl;
 	return;
 }
@@ -117,12 +86,8 @@ void solve(){
 * DON'T GET STUCK ON ONE APPROACH
 */
 int main(){
-	string name="baseball";
 	//http://www.usaco.org/index.php?page=viewproblem2&cpid=359
-	setIO(name);
-	//cout.tie(NULL);
-	//cin >> t;
-	//while (t--)
+	setIO();
 	solve();
 	cerr<<"time taken : "<<(float)clock()/CLOCKS_PER_SEC <<" secs"<<endl; 
 	return 0;
