@@ -26,7 +26,7 @@ const ll maxn=1e7+10;
 int n; ll x,m; bool prime[maxn];
 
 
-ll sqrt(ll n){
+ll sqrt(const ll &n){
 	assert(n>=0);
 	if (n==1 || !n) return n;
 	ll m=sqrt((double)n);
