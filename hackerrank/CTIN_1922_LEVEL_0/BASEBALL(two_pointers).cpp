@@ -78,7 +78,7 @@ void setIO(string name =""){
 	return;
 }
 
-int n,a[1050],l,r,ans,cnt;
+int n,a[1050],l,r,ans; //int cnt;
 
 void solve(){
 	cin >> n;
@@ -93,14 +93,15 @@ void solve(){
 			r=n-1;
 			if (a[l]-a[i]>a[r]-a[l]) break;
 			while (l<r && (a[r]-a[l])>2*(a[l]-a[i]) && (a[l]-a[i]<=a[r]-a[l])){
-				--r; ++cnt;
+				--r; //++cnt;
 			}
 			if (a[l]-a[i]>a[r]-a[l] || l>=r) continue;
 			while (l<r && (a[l]-a[i]<=a[r]-a[l])){
-				--r; ++ans; ++cnt;
+				--r; ++ans; //++cnt;
 			}
 		}
 	}
+	//cerr << cnt << endl;
 	cout << ans << endl;
 	return;
 }
