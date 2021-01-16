@@ -47,7 +47,7 @@ const int maxn=1e5+10;
 const ll INF = 1e18;
 
 //variables used for the current problem
-int a,b,mn=MOD,mx,n,cnt;
+ll a,b,mn=MOD,mx,n,cnt;
 
 void solve(){
 	cin >> a >> b;
