@@ -63,7 +63,7 @@ void setIO(string name =""){
 
 //constant initialization
 const string yes="YES",no="NO";
-const int mod=1e9+7; //998244353
+const int MOD=1e9+7; //998244353
 const int maxn=2e5+10;
 
 //variables used for the current problem
