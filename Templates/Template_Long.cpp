@@ -65,6 +65,7 @@ void setIO(string name =""){
 const string yes="YES",no="NO";
 const int MOD=1e9+7; //998244353
 const int maxn=2e5+10;
+const ll INF = 1e18; //Not too close to LLONG_MAX
 
 //variables used for the current problem
 int t,n;
