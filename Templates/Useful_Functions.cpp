@@ -96,3 +96,11 @@ ll modular_inverse(ll x){
 	return fast_pow_with_mod(x,MOD-2);
 }
 	
+int gcd(int a, int b){
+	if (b>a) swap(a,b);
+	while (b){
+		swap(a,b);
+		b=b%a;
+	}
+	return a;
+}
