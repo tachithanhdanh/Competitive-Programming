@@ -35,7 +35,8 @@ using namespace std;
 #define hash_map unordered_map 
 
 int x[5],y[5];
-
+//http://www.usaco.org/index.php?page=viewproblem2&cpid=783
+//http://www.usaco.org/current/data/sol_billboard_bronze_jan18.html
 void solve(){ //Your solution starts here.
 	for (int i=1;i<=4;++i){
 		cin >> x[i] >> y[i];
