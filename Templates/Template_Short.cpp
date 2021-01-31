@@ -23,7 +23,7 @@ using pi = pair<int,int>;
 #define F0R(i,a) FOR(i,0,a)
 #define ROF(i,a,b) for (int i = (b)-1; i >= (a); --i)
 #define R0F(i,a) ROF(i,0,a)
-#define trav(a,x) for (auto& a: x)
+#define each(a,x) for (auto& a: x)
 
 void setIO(string name = "") { 
 	ios_base::sync_with_stdio(false); cin.tie(nullptr);
