@@ -4,6 +4,7 @@ using namespace std;
 
 int main(){
 	// initialize file I/O
+	ios_base::sync_with_stdio(0); cin.tie(0); // see Fast Input & Output
 	freopen("promote.in","r",stdin);
 	freopen("promote.out","w",stdout);
 
@@ -18,7 +19,7 @@ int main(){
 	// read in counts for gold
 	int goldBefore, goldAfter;
 	cin >> goldBefore >> goldAfter;
-	
+
 	// read in counts for platinum
 	int platinumBefore, platinumAfter;
 	cin >> platinumBefore >> platinumAfter;
