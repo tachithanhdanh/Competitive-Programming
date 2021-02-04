@@ -24,17 +24,17 @@ int main(){
 
 	//Since there are N-1 words left, we only loop up to N-1.
 	for (int i = 0; i < N - 1; ++i){
-        cin >> S; //Read the next word.
+		cin >> S; //Read the next word.
 		//Calculate the new length if we put the new word into the current line.
-        Word_Length += S.length(); 
-        if (Word_Length <= K) { //If it still satisfies the constraint then print that word.
-            cout << " ";
-            cout << S;
-        }
-        else { //Else we create a new line and print the word on that line.
-            cout << "\n" << s;
+		Word_Length += S.length(); 
+		if (Word_Length <= K) { //If it still satisfies the constraint then print that word.
+			cout << " ";
+			cout << S;
+		}
+		else { //Else we create a new line and print the word on that line.
+			cout << "\n" << S;
 			Word_Length = S.length();
-        } 
-    }	
+		} 
+	}	
 	return 0;
 }
