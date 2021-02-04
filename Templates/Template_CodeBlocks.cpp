@@ -32,12 +32,12 @@ const int maxn=2e6+10;
 const ll INF = 1e18; //Not too close to LLONG_MAX
 
 int main() {
-    cin.tie(0)->sync_with_stdio(0);
-    #ifdef LOCAL
-        freopen("input.txt", "r", stdin);
-    #endif
-    int n;
-    cin >> n;
-    cout << n;
-    return 0;
+	cin.tie(0)->sync_with_stdio(0);
+	#ifdef LOCAL
+		freopen("input.txt", "r", stdin);
+	#endif //LOCAl
+	int n;
+	cin >> n;
+	cout << n;
+	return 0;
 }
