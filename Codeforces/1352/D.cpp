@@ -31,21 +31,35 @@ const int MOD=1e9+7; //998244353
 const ll INF = 1e18; //Not too close to LLONG_MAX
 
 int main() {
-    cin.tie(0)->sync_with_stdio(0);
-    #ifdef LOCAL
-        freopen("input.txt","r",stdin);
-    #endif // LOCAL
-    int T; cin >> T;
-    while (T--) {
-        ll N, K;
-        cin >> N >> K;
-        if (K%(N-1)) {
-            cout << (K/(N-1))*N + K%(N-1);
-        }
-        else {
-            cout << (K/(N-1))*N-1;
-        }
-        cout << endl;
-    }
+	cin.tie(0)->sync_with_stdio(0);
+	#ifdef LOCAL
+		freopen("input.txt","r",stdin);
+	#endif // LOCAL
+	int T; cin >> T;
+	while (T--) {
+		int N; cin >> N;
+		vi a(N); each(b,a) cin >> b;
+		int i = 0, j = N - 1;
+		int moves = 0, A = 0, B = 0;
+		int sum, pre = 0;
+		while (i<=j) {
+			sum = 0;
+			while (sum <= pre) {
+				if (moves&1) {
+					sum += a[j]; --j;
+				}
+				else {
+				sum += a[i]; ++i;
+				}
+				if (i>j) break;
+			}
+			if (moves&1) B += sum;
+			else A += sum;
+			++moves;
+			if (i>j || sum <= pre) break;
+			pre = sum;
+		}
+		cout << moves << " " << A << " " << B << endl;
+	}
 	return 0;
 }
