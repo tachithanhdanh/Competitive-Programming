@@ -43,7 +43,7 @@ int main() {
 		//Nếu i - K - 1 >= 0 thì có 2 trường hợp xảy ra:
 		//TH1: Nhét B vào, như vậy thì có dp[i-K-1] cách xếp 
 		//vì khi ta nhét B và thì từ i-K đến i-1 phải xếp TOÀN BỘ CHỮ C VÀO (do nhét chữ B vào sẽ không thỏa YCBT)
-		//nên ở phân đoạn từ i-K đén i-1 chỉ có một cách xếp và số cách xếp ở TH phụ thuộc vào dp[i-K-1]
+		//nên ở phân đoạn từ i-K đén i-1 chỉ có một cách xếp và số cách xếp ở TH này phụ thuộc vào dp[i-K-1]
 		//@param
 		//TH2: Nhét C vào, thì ở đây ta có số cách xếp ở i = số cách xếp ở i-1 vì không bị ràng buộc gì cả.
 		if (i-K-1>=0) dp[i] += dp[i-K-1] + dp[i-1];
