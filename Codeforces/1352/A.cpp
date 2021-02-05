@@ -31,23 +31,23 @@ const int MOD=1e9+7; //998244353
 const ll INF = 1e18; //Not too close to LLONG_MAX
 
 int main() {
-    cin.tie(0)->sync_with_stdio(0);
-    #ifdef LOCAL
-        freopen("input.txt","r",stdin);
-    #endif // LOCAL
-    int T; cin >> T;
-    while (T--) {
-        int N; cin >> N;
-        vi ans; int q = 1;
-        while (N){
-            if (N%10) {
-                ans.pb((N%10)*q);
-            }
-            q *= 10; N /= 10;
-        }
-        cout << sz(ans) << endl;
-        each(res,ans) cout << res << " ";
-        cout << endl;
-    }
+	cin.tie(0)->sync_with_stdio(0);
+	#ifdef LOCAL
+		freopen("input.txt","r",stdin);
+	#endif // LOCAL
+	int T; cin >> T;
+	while (T--) {
+		int N; cin >> N;
+		vi ans; int q = 1;
+		while (N){
+			if (N%10) {
+				ans.pb((N%10)*q);
+			}
+			q *= 10; N /= 10;
+		}
+		cout << sz(ans) << endl;
+		each(res,ans) cout << res << " ";
+		cout << endl;
+	}
 	return 0;
 }
