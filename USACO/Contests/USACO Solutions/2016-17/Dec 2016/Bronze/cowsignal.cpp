@@ -1,10 +1,12 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-using si = short int;
-si m,n,k; char c[10][10];
-
-void solve(){
+int main(){
+	ios_base::sync_with_stdio(false);
+	cin.tie(nullptr);
+	freopen("cowsignal.in","r",stdin);
+	freopen("cowsignal.out","w",stdout);
+	int m,n,k; char c[10][10];
 	cin >> m >> n >> k;
 	for (si i=0;i<m;++i){
 		for (si j=0;j<n;++j){
@@ -18,16 +20,8 @@ void solve(){
 					cout << c[i][j];
 				}
 			}
-			cout << endl;
+			cout << '\n';
 		}
 	}
-}
-
-int main(){
-	ios_base::sync_with_stdio(false);
-	cin.tie(nullptr);
-	freopen("cowsignal.in","r",stdin);
-	freopen("cowsignal.out","w",stdout);
-	solve();
 	return 0;
 }
