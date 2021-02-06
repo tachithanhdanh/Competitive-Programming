@@ -45,9 +45,6 @@ int main() {
 	each(b,a) {
 		min_day += b == 0; bonus += b == -1;
 	}
-	if (a[0]) {
-		cout << -1; return 0;
-	}
 	FOR(i,1,N) {
 		if (a[i-1]==-1 || a[i]==-1) continue;
 		if (a[i-1]+1!=a[i] && a[i]) {
