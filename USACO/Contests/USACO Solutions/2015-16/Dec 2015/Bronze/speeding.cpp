@@ -6,7 +6,12 @@ using namespace std;
  
 int n,m,a[105],b[105],ans,c,d,e;
 
-void solve(){ //Your solution starts here.
+int main(){
+	ios_base::sync_with_stdio(false);
+	cin.tie(nullptr);
+	freopen("speeding.in", "r", stdin);  
+	freopen("speeding.out", "w", stdout); 
+	//Your solution starts here.
 	cin >> n >>m; e=1;
 	for (int i=0;i<n;++i){
 		cin >> c >> d;
@@ -26,15 +31,6 @@ void solve(){ //Your solution starts here.
 	for (int i=1;i<=100;++i){
 		ans=max(ans,b[i]-a[i]);
 	}
-	cout << ans;
-	return;
-}
-
-int main(){
-	ios_base::sync_with_stdio(false);
-	cin.tie(nullptr);
-	freopen("speeding.in", "r", stdin);  
-	freopen("speeding.out", "w", stdout); 
-	solve(); 
+	cout << ans; 
 	return 0;
 }
