@@ -3,7 +3,11 @@ using namespace std;
 
 int n,i_index,j_index,ans; bool cows[11][11],flag; char ch;
 
-void solve(){
+int main(){
+	ios_base::sync_with_stdio(false);
+	cin.tie(nullptr);
+	freopen("cowtip.in", "r", stdin);
+	freopen("cowtip.out", "w", stdout);
 	cin >> n;
 	for (int i=0;i<n;++i){
 		for (int j=0;j<n;++j){
@@ -24,12 +28,5 @@ void solve(){
 		}
 	}
 	cout << ans;
-	return;
-}
-
-int main(){
-	freopen("cowtip.in", "r", stdin);
-	freopen("cowtip.out", "w", stdout);
-	solve();
 	return 0;
 }
