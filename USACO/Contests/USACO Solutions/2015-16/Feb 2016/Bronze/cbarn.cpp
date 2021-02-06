@@ -2,13 +2,16 @@
 #include <cstdio>
 #include <climits>
 #include <algorithm>
-#include <vector>
- 
-using namespace std;
+ using namespace std;
  
 int n,a[1010],ans=INT_MAX,total;
 
-void solve(){ //Your solution starts here.
+int main(){
+	ios_base::sync_with_stdio(false);
+	cin.tie(nullptr);
+	freopen("cbarn.in", "r", stdin); 
+	freopen("cbarn.out", "w", stdout); 
+	//Your solution starts here.
 	cin >> n;
 	for (int i=1;i<=n;++i){
 		cin >> a[i];
@@ -24,14 +27,5 @@ void solve(){ //Your solution starts here.
 		ans=min(ans,total);
 	}
 	cout << ans;
-	return;
-}
-
-int main(){
-	ios_base::sync_with_stdio(false);
-	cin.tie(nullptr);
-	freopen("cbarn.in", "r", stdin); 
-	freopen("cbarn.out", "w", stdout); 
-	solve();
 	return 0;
 }
