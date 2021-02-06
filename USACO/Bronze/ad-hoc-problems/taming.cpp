@@ -41,15 +41,15 @@ int main() {
 	vi a(N); each(b,a) cin >> b;
 	a[0] = 0;
 	R0F(i,N-1) if (a[i+1]!=-1 && a[i+1] && a[i]==-1) a[i] = a[i+1] - 1;
-	int min_day = 0, missing = 0, max_day;
-	each(b,a) {
-		min_day += b == 0; missing += b == -1;
-	}
 	FOR(i,1,N) {
 		if (a[i-1]==-1 || a[i]==-1) continue;
 		if (a[i-1]+1!=a[i] && a[i]) {
 			cout << -1; return 0;
 		}
+	}
+	int min_day = 0, missing = 0, max_day;
+	each(b,a) {
+		min_day += b == 0; missing += b == -1;
 	}
 	max_day = min_day + missing;
 	cout << min_day << " " << max_day;
