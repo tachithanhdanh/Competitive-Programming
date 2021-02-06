@@ -3,8 +3,13 @@ using namespace std;
 
 int n,milk,sec,cnt; map<string,int> mp; string cow;
 string cowlist[]={"Bessie", "Elsie", "Daisy", "Gertie", "Annabelle", "Maggie", "Henrietta"};
- 
-void solve(){ //Your solution starts here.
+
+int main(){
+	ios_base::sync_with_stdio(false);
+	cin.tie(nullptr);
+	freopen("notlast.in","r",stdin);
+	freopen("notlast.out","w",stdout);
+	//Your solution starts here.
 	cin >> n;
 	for (int i=0;i<7;++i){
 		mp[cowlist[i]]=0;
@@ -36,15 +41,6 @@ void solve(){ //Your solution starts here.
 	else {
 		cout << cow;
 	}
-	return;
-}
-
-int main(){
-	ios_base::sync_with_stdio(false);
-	cin.tie(nullptr);
-	freopen("notlast.in","r",stdin);
-	freopen("notlast.out","w",stdout);
-	solve();
 	return 0;
 }
  
