@@ -43,11 +43,11 @@ void solve(){
 }
 
 int main(){
-    ios::sync_with_stdio(false);
-    cin.tie(0);
-  	#ifdef LOCAL
-  	freopen("input.txt","r",stdin);
-  	freopen("output.txt","w",stdout);
-  	#endif
-    solve();
+	ios::sync_with_stdio(false);
+	cin.tie(0);
+	#ifdef LOCAL
+	freopen("input.txt","r",stdin);
+	freopen("output.txt","w",stdout);
+	#endif
+	solve();
 }
