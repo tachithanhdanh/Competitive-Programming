@@ -5,7 +5,7 @@ using namespace std;
 
 using ll = long long;
 
-//vector
+//vectors
 using vi = vector<int>;
 #define all(x) begin(x), end(x)
 #define sz(x) int((x).size())
