@@ -14,7 +14,7 @@ using ld = long double;
 //https://usaco.guide/general/fast-io/#fast-output
 //https://codelearn.io/sharing/thu-thuat-cpp-hay-trong-lap-trinh-thi-dau-cho-nguoi-moi-bat-dau
 
-//vector
+//vectors
 using vi = vector<int>;
 #define all(x) begin(x), end(x) 
 #define rall(x) (x).rbegin(), (x).rend()
