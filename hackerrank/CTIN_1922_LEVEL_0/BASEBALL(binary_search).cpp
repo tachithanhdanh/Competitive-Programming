@@ -5,7 +5,7 @@ using namespace std;
 
 using ll = long long;
 
-//vector
+//vectors
 using vi = vector<int>;
 #define all(x) begin(x), end(x)
 #define sz(x) int((x).size())
@@ -25,26 +25,6 @@ using pi = pair<int,int>;
 #define R0F(i,a) ROF(i,0,a)
 #define trav(a,x) for (auto& a : x)
 
-void setIO(string name = "") { 
-	ios_base::sync_with_stdio(false); cin.tie(nullptr);
-	if (sz(name)) {
-		freopen((name+".in").c_str(), "r", stdin);
-		freopen((name+".out").c_str(), "w", stdout);
-	}
-	else{
-		#ifdef LOCAL
-		freopen("input.txt", "r", stdin);  
-		freopen("output.txt", "w", stdout); 
-		freopen("error.txt", "w", stderr);
-		#endif 
-	}
-}
-
-//constant initialization
-const string yes="YES",no="NO";
-const int mod=1e9+7;
-const int maxn=2e5+10;
-
 //https://www.hackerrank.com/contests/ctin-1922-level-0/challenges/nhung-chu-bo-choi-bong-chay-cow-baseball/
 //http://www.usaco.org/index.php?page=viewproblem2&cpid=359
 //http://www.usaco.org/current/data/sol_baseball.html
@@ -52,7 +32,10 @@ const int maxn=2e5+10;
 //variables used for the current problem
 int n,ans; vi a;
 
-void solve(){
+int main() {
+	cin.tie(0)->sync_with_stdio(0);
+	freopen("baseball.in","r",stdin);
+	freopen("baseball.out","w",stdout);
 	cin >> n;
 	a.rsz(n);
 	trav(b,a) cin >> b;
@@ -62,12 +45,5 @@ void solve(){
 		ans+=(upper_bound(all(a),a[j]+2*dif)-lower_bound(all(a),a[j]+dif));
 	}
 	cout << ans << endl;
-	return;
-}
-
-int main() {
-	setIO();
-	solve();
-	cerr<<"time taken : "<<(float)clock()/CLOCKS_PER_SEC <<" secs"<<endl;
 	return 0;
 }
