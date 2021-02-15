@@ -78,6 +78,16 @@ vector<pi> prime_factorization(int n){
 	}
 	return factors;
 }
+
+bool isPrime(ll n){
+	if (n<2) return false;
+	if (n==2 || n==3 || n==5 || n==7) return true;
+	if (!(n&1) || !(n%3)) return false;
+	for (ll i=6; (i-1) * (i-1) <= n; i += 6) 
+		if ( n % (i-1) == 0 || n % (i+1) == 0)
+			return false; 
+	return true;
+}
 	
 /* Iterative Function to calculate (x^y) in O(log y) */
 //https://www.geeksforgeeks.org/write-an-iterative-olog-y-function-for-powx-y/
