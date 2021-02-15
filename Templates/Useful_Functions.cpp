@@ -56,6 +56,29 @@ void sieve() {
 	}
 }
 
+//Documentation: https://drive.google.com/file/d/1hSe9exLvXgzDtRlVLi3rRCIUE9w9EkmW/view
+//Time complexity O(sqrt(N)/3)
+vector<pi> prime_factorization(int n){
+	vector<pi> factors;
+	int cnt = 0;
+	while (!(n&1)) n >>= 2, ++cnt;
+	if (cnt) factors.pb(mp(2,cnt));
+	cnt = 0;
+	while (n % 3 == 0) {
+		n /= 3; ++cnt;
+	}
+	if (cnt) factors.pb(mp(3,cnt));
+	cnt = 0;
+	for (int i = 5, t = 2; i * i <= n; i += t, t = 6 – t) {
+		if (n % i == 0) cnt = 0;
+		while (n % i == 0) {
+			n /= i; ++cnt;
+		}
+		factors.pb(mp(i,cnt));
+	}
+	return factors;
+}
+	
 /* Iterative Function to calculate (x^y) in O(log y) */
 //https://www.geeksforgeeks.org/write-an-iterative-olog-y-function-for-powx-y/
 ll fast_pow_without_mod(ll x,uint y) 
