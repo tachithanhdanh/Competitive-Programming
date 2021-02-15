@@ -26,7 +26,7 @@ const ll maxn=1e7+10;
 int n; ll x,m; bool prime[maxn];
 
 
-ll sqrt(const ll &n){
+ll sqrt(const ll &n) {
 	assert(n>=0);
 	if (n==1 || !n) return n;
 	ll m=sqrt((double)n);
@@ -36,7 +36,8 @@ ll sqrt(const ll &n){
 	return -1;
 }
 
-void sieve(){
+//Documentation: https://drive.google.com/file/d/1hSe9exLvXgzDtRlVLi3rRCIUE9w9EkmW/view
+void sieve() {
 	memset(prime,true,sizeof(prime));
 	prime[0]=prime[1]=false;
 	for (int i=2*2;i<maxn;i+=2) prime[i]=false;
@@ -92,11 +93,12 @@ ll fast_pow_with_mod(ll x, uint y)
 //https://cp-algorithms.com/algebra/module-inverse.html#toc-tgt-2
 //https://www.geeksforgeeks.org/multiplicative-inverse-under-modulo-m/
 //https://vnoi.info/wiki/algo/math/modular-inverse.md#t%C3%ADnh-t%E1%BA%A5t-c%E1%BA%A3-ngh%E1%BB%8Bch-%C4%91%E1%BA%A3o-modulo-m
-ll modular_inverse(ll x){
+//https://usaco.guide/gold/modular/#modular-inverse
+ll modular_inverse(ll x) {
 	return fast_pow_with_mod(x,MOD-2);
 }
 	
-int gcd(int a, int b){
+int gcd(int a, int b) {
 	if (b>a) swap(a,b);
 	while (b){
 		swap(a,b);
@@ -104,3 +106,7 @@ int gcd(int a, int b){
 	}
 	return a;
 }
+
+ll lcm(int a, int b) {
+	
+}	
