@@ -24,7 +24,7 @@ const ll maxn=1e7+10;
 
 //variables used for the current problem
 int n; ll x,m; bool prime[maxn];
-
+vi p((int)6e5);
 
 ll sqrt(const ll &n) {
 	assert(n>=0);
@@ -54,6 +54,24 @@ void sieve() {
 			}
 		}	
 	}
+}
+
+void more_effective_sieve(){
+	p[0] = 2; p[1] = 3;
+	int pos = 2;
+	for (int i = 5, t = 2; i * i <= n; i += t, t = 6 – t) {
+		bool f = true;
+		for (int j : p) {
+			if (j * j > i) break;
+			if (i % j == 0) {
+				f = false; break;
+			}
+		}
+		if (f) {
+			p[pos] = i; ++pos;
+		}
+	}
+	return;
 }
 
 //Documentation: https://drive.google.com/file/d/1hSe9exLvXgzDtRlVLi3rRCIUE9w9EkmW/view
