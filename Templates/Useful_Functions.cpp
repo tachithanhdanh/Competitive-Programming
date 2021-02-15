@@ -98,7 +98,7 @@ ll modular_inverse(ll x) {
 	return fast_pow_with_mod(x,MOD-2);
 }
 	
-int gcd(int a, int b) {
+int GCD(int a, int b) {
 	if (b>a) swap(a,b);
 	while (b){
 		swap(a,b);
@@ -107,6 +107,6 @@ int gcd(int a, int b) {
 	return a;
 }
 
-ll lcm(int a, int b) {
-	return 1LL*a*b/gcd(a,b);
+ll LCM(int a, int b) {
+	return 1LL*a*b/GCD(a,b);
 }	
