@@ -108,5 +108,5 @@ int gcd(int a, int b) {
 }
 
 ll lcm(int a, int b) {
-	
+	return 1LL*a*b/gcd(a,b);
 }	
