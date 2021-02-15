@@ -58,7 +58,7 @@ void sieve() {
 
 //Documentation: https://drive.google.com/file/d/1hSe9exLvXgzDtRlVLi3rRCIUE9w9EkmW/view
 //Time complexity O(sqrt(N)/3)
-vector<pi> prime_factorization(int n){
+vector<pi> prime_factorization (int n) {
 	vector<pi> factors;
 	int cnt = 0;
 	while (!(n&1)) n >>= 2, ++cnt;
@@ -79,7 +79,8 @@ vector<pi> prime_factorization(int n){
 	return factors;
 }
 
-bool isPrime(ll n){
+//Time complexity: O(sqrt(N)/6)
+bool isPrime (ll n) {
 	if (n<2) return false;
 	if (n==2 || n==3 || n==5 || n==7) return true;
 	if (!(n&1) || !(n%3)) return false;
@@ -91,7 +92,7 @@ bool isPrime(ll n){
 	
 /* Iterative Function to calculate (x^y) in O(log y) */
 //https://www.geeksforgeeks.org/write-an-iterative-olog-y-function-for-powx-y/
-ll fast_pow_without_mod(ll x,uint y) 
+ll fast_pow_without_mod (ll x, uint y) 
 { 
 	ll res = 1; // Initialize result 
 	while (y > 0) { 
@@ -107,7 +108,7 @@ ll fast_pow_without_mod(ll x,uint y)
 
 /* Iterative Function to calculate (x^y)%p in O(log y) */
 //https://www.geeksforgeeks.org/modular-exponentiation-power-in-modular-arithmetic/
-ll fast_pow_with_mod(ll x, uint y)  
+ll fast_pow_with_mod (ll x, uint y)  
 {  
 	ll res = 1; // Initialize result  
 	x = x % MOD; // Update x if it is more than or equal to p 
@@ -127,11 +128,11 @@ ll fast_pow_with_mod(ll x, uint y)
 //https://www.geeksforgeeks.org/multiplicative-inverse-under-modulo-m/
 //https://vnoi.info/wiki/algo/math/modular-inverse.md#t%C3%ADnh-t%E1%BA%A5t-c%E1%BA%A3-ngh%E1%BB%8Bch-%C4%91%E1%BA%A3o-modulo-m
 //https://usaco.guide/gold/modular/#modular-inverse
-ll modular_inverse(ll x) {
+ll modular_inverse (ll x) {
 	return fast_pow_with_mod(x,MOD-2);
 }
 	
-int GCD(int a, int b) {
+int GCD (int a, int b) {
 	if (b>a) swap(a,b);
 	while (b){
 		swap(a,b);
@@ -140,6 +141,6 @@ int GCD(int a, int b) {
 	return a;
 }
 
-ll LCM(int a, int b) {
+ll LCM (int a, int b) {
 	return 1LL*a*b/GCD(a,b);
 }	
