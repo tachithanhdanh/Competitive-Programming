@@ -57,14 +57,14 @@ void solve(){
 	}
 	F0R(i,n) {
 		if (sum+a[i]<a[i]){
-            sum = a[i];
-            temp_start=temp_finish=i;
+			sum = a[i];
+			temp_start=temp_finish=i;
 		}
-        else{
-            ++temp_finish; sum+=a[i];
-        }
+		else{
+			++temp_finish; sum+=a[i];
+		}
 		if (sum>best){
-            best=sum; start=temp_start; finish=temp_finish;
+			best=sum; start=temp_start; finish=temp_finish;
 		}
 	}
 	cout << ++start << " " << ++finish << endl << best;
