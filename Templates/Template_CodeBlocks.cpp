@@ -9,7 +9,6 @@ using ll = long long;
 using vi = vector<int>;
 #define all(x) begin(x), end(x)
 #define sz(x) int((x).size())
-#define rsz resize
 #define pb push_back
 
 //pairs
