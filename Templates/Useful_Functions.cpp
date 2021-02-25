@@ -159,3 +159,8 @@ int GCD (int a, int b) {
 ll LCM (int a, int b) {
 	return 1LL*a*b/GCD(a,b);
 }	
+
+//Set min-max value.
+//Explantation: https://codeforces.com/blog/entry/78833
+template<class T> bool ckmin(T& a, const T& b) { return b < a ? a = b, 1 : 0; } // set a = min(a,b)
+template<class T> bool ckmax(T& a, const T& b) { return b > a ? a = b, 1 : 0; } // set a = max(a,b)
