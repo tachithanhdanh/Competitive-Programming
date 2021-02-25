@@ -18,12 +18,13 @@ using pi = pair<int,int>;
 #define s second
 #define mp make_pair
 
-// loops
-#define FOR(i,a,b) for (int i = (a); i < (b); ++i)
-#define F0R(i,a) FOR(i,0,a)
-#define ROF(i,a,b) for (int i = (b)-1; i >= (a); --i)
-#define R0F(i,a) ROF(i,0,a)
-#define each(a,x) for (auto& a: x)
+void setIO (string name = "") {
+	cin.tie(0)->sync_with_stdio(0);
+	if (sz(name)) {
+		freopen((name+".in").c_str(), "r", stdin);
+		freopen((name+".out").c_str(), "w", stdout);
+	}
+}
 
 //constant initialization
 const string yes="YES",no="NO";
@@ -35,7 +36,7 @@ const ll INF = 1e18; //Not too close to LLONG_MAX
 int n;
 
 int main() {
-	cin.tie(0)->sync_with_stdio(0);
+	setIO();
 	#ifdef LOCAL
 		freopen("input.txt", "r", stdin);
 	#endif //LOCAL
