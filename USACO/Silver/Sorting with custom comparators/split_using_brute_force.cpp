@@ -91,7 +91,9 @@ signed main() {
 		info[0].maxX1 = info[0].minX1 = info[0].maxY1 = info[0].minY1 = 0;
 		info[N].maxX2 = info[N].minX2 = info[N].maxY2 = info[N].minY2 = 0;
 		for (int i = 0; i <= N; ++i) {
-			ll curArea = 1LL*(info[i].maxX1-info[i].minX1)*(info[i].maxY1-info[i].minY1) + 1LL*(info[i].maxX2-info[i].minX2)*(info[i].maxY2-info[i].minY2);
+			ll first_enclosure = 1LL*(info[i].maxX1-info[i].minX1)*(info[i].maxY1-info[i].minY1);
+			ll second_enclosure = 1LL*(info[i].maxX2-info[i].minX2)*(info[i].maxY2-info[i].minY2);
+			ll curArea = first_enclosure + second_enclosure;
 			ckmin(area_after,curArea);
 		}
 		sort(all(cows),cmp2);
