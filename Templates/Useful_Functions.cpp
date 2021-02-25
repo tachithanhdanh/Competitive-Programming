@@ -23,7 +23,9 @@ const int MOD=1e9+7;
 const ll maxn=1e7+10;
 
 //variables used for the current problem
-int n; ll x,m; bool prime[maxn];
+int n; ll x,m; 
+//bool prime[maxn];
+vector<bool> prime(maxn,true);
 vi p((int)6e5);
 
 ll sqrt(const ll &n) {
@@ -38,22 +40,15 @@ ll sqrt(const ll &n) {
 
 //Documentation: https://drive.google.com/file/d/1hSe9exLvXgzDtRlVLi3rRCIUE9w9EkmW/view
 void sieve() {
-	memset(prime,true,sizeof(prime));
-	prime[0]=prime[1]=false;
-	for (int i=2*2;i<maxn;i+=2) prime[i]=false;
-	for (int i=3*3;i<maxn;i+=3) prime[i]=false;
-	for (int i=5;i*i<maxn;i+=6){
-		if (prime[i]){
-			for (int j=i*i;j<maxn;j+=i){
-				prime[j]=false;
-			}
-		}
-		if (prime[i+2]){
-			for (int j=(i+2)*(i+2);j<maxn;j+=(i+2)){
-				prime[j]=false;
-			}
-		}	
+	//memset(prime,true,sizeof(prime));
+	prime[0] = prime[1] = false;
+	for (int i = 2 * 2; i < maxn; i += 2) prime[i] = false;
+	for (int i = 3 * 3; i < maxn; i += 3) prime[i] = false;
+	for (int i = 5; i * i < maxn; i += 6) {
+		if (prime[i]) for (int j = i * i; j < maxn; j += i) prime[j] = false;
+		if (prime[i+2]) for (int j = (i+2) * (i+2); j < maxn; j += i + 2) prime[j] = false;
 	}
+	return;
 }
 
 void more_effective_sieve(){
