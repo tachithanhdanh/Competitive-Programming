@@ -74,7 +74,7 @@ signed main() {
 	}
 	area_before = 1LL*(maxX-minX)*(maxY-minY);
 	sort(all(cows),cmp1);
-	for (int k = 0; k <= 1; ++k){
+	for (int k = 0; k <= 1; ++k) {
 		vector<Info> info(N+1);
 		for (int i = 0; i < N; ++i) {
 			ckmax(info[i+1].maxX1,max(cows[i].x,info[i].maxX1));
