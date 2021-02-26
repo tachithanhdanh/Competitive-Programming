@@ -1,3 +1,4 @@
+// Source : https://usaco.guide/general/contributing/#c-template
 #include <bits/stdc++.h> // see /general/running-code-locally
 using namespace std;
 
@@ -6,7 +7,7 @@ using ll = long long;
 using vi = vector<int>;
 #define pb push_back
 #define all(x) begin(x), end(x)
-#define sz(x) (int)(x).size()
+#define sz(x) int((x).size())
 
 using pi = pair<int,int>;
 #define f first
