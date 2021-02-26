@@ -3,8 +3,8 @@ using namespace std;
 
 using ll = long long;
 
-#define f first
-#define s second
+#define X first
+#define Y second
 #define mp make_pair
 #define pb push_back
 
@@ -25,9 +25,9 @@ int main(){
 	for (int i=0;i<n;++i){
 		for (int j=0;j<n;++j){
 			for (int k=0;k<n;++k){
-				if (v[i].f==v[j].f && v[i].s==v[k].s){
-					a=abs(v[i].s-v[j].s);
-					b=abs(v[i].f-v[k].f);
+				if (v[i].X == v[j].X && v[i].Y == v[k].Y){
+					a=abs(v[i].Y-v[j].Y);
+					b=abs(v[i].X-v[k].X);
 					area=a*b;
 				}
 				ans=max(area,ans);
