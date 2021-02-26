@@ -2,15 +2,17 @@
 using namespace std;
 
 using ll = long long;
+
 #define f first
 #define s second
 #define mp make_pair
 #define pb push_back
 
-int n,x,y; vector<pair<int,int>> v; ll a,b,area,ans;
+int n,x,y; 
+vector<pair<int,int>> v; 
+ll a,b,area,ans;
 
 int main(){
-	string name="triangles";
 	ios_base::sync_with_stdio(false);
 	cin.tie(nullptr);
 	freopen("triangles.in", "r", stdin); 
