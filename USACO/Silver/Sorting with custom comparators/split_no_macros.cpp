@@ -18,7 +18,7 @@ void tri() {
 	for (int i = N - 2; i >= 0; --i) rig[i] = comb(rig[i+1],v[i].second);
 	long long area = 1LL*(v.back().first-v.front().first)*(lef.back().second-lef.back().first);
 	long long best = INF;
-	for (int i = 0; i < N - 1; ++i) if (v[i].first != v[i+1].first)
+	for (int i = 0; i < N - 1; ++i)
 		best = min(best,1LL*(v[i].first-v[0].first)*(lef[i].second-lef[i].first)
 			+1LL*(v.back().first-v[i+1].first)*(rig[i+1].second-rig[i+1].first));
 	ans = max(ans,area-best);
