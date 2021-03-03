@@ -41,8 +41,7 @@ vi adj[MX];
 int N, M;
 bool visited[MX];
 int visits, ans;
-int mxV1, mxV2;
-int u1, u2;
+int component1, strongly_connected_component;
 
 void dfs(int node) {
 	visited[node] = true;
@@ -54,58 +53,15 @@ void dfs(int node) {
 	}
 }
 
-void sub1() {
-	for (int i = 1; i <= N; ++i) for (int j = i + 1; j <= N; ++j) {
-		adj[i].pb(j);
-		fill(visited,visited + N + 5, false);
-		visits = 0;
-		dfs(i);
-		adj[i].pop_back();
-		ans = max(ans, visits);
-
-		adj[j].pb(i);
-		fill(visited,visited + N + 5, false);
-		visits = 0;
-		dfs(j);
-		adj[j].pop_back();
-		ans = max(ans, visits);
-	}
-}
-
-void sub2() {
-	for (int i = 1; i <= N; ++i) {
-		//fill(visited,visited + N + 5, false);
-		if (visited[i]) continue;
-		visits = 0;
-		dfs(i);
-		ans = max(ans, visits);
-
-		if (visits > mxV1) {
-			mxV2 = mxV1;
-			u2 = u1;
-			u1 = i;
-			mxV1 = visits;
-		}
-		else if (visits > mxV2) {
-			u2 = i;
-			mxV2 = visits;
-		}
-	}
-	if (u1 != u2 && u2 && u1) {
-		adj[u1].pb(u2);
-	}
-	fill(visited,visited + N + 5, false);
-	visits = 0;
-	//debug(u1);
-	dfs(u1);
-	ans = max(ans, visits);
-}
-
 int main() {
 	setIO("NYTRAVEL");
 	//setIO();
-	//fuck, finding largest cycle?????
-	//I am suck at Graph Theory so I'm just gonna grab some partial points (again)
+	//Bài toán yêu cầu ta tìm 2 thành phần liên thông mạnh
+	//Với thành phần đầu tiên BẮT BUỘC PHẢI CHỨA ĐỈNH 1 (VÌ BẮT ĐẦU ĐI THĂM TẠI ĐỈNH 1)
+	//Thành phần thứ hai không liên quan đến thằng đầu (nghĩa là không chung đỉnh lẫn cạnh)
+	//Ta ghép 2 thành phần liên thông đó tạo thành 1 thành phần liên thông mạnh chứa nhiều đỉnh nhất 
+	//Đáp án : số đỉnh của TP1 + TP2
+
 	cin >> N >> M;
 	for (int i = 0; i < M; ++i) {
 		int u, v;
@@ -113,9 +69,15 @@ int main() {
 		adj[u].pb(v);
 		adj[v].pb(u);
 	}
-	if (N <= 500) sub1();
-	else sub2();
-	cout << ans;
+	dfs(1);
+	component1 = visits;
+	for (int i = 2; i <= N; ++i) {
+		//fill(visited,visited + N + 5, false);
+		if (visited[i]) continue;
+		visits = 0;
+		dfs(i);
+		strongly_connected_component = max(strongly_connected_component, visits);
+	}
+	cout << component1 + strongly_connected_component;
 	return 0;
 }
-
