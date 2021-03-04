@@ -1,133 +1,75 @@
-#include <iostream>
-#include <fstream>
-#include <sstream>
-#include <iomanip>
-#include <cstdio>
-#include <cmath>
-#include <cstring>
-#include <cctype>
-#include <climits>
-#include <cfloat>
-#include <string>
-#include <algorithm>
-#include <functional>
-#include <vector>
-#include <list>
-#include <array>
-#include <set>
-#include <map>
-#include <stack>
-#include <queue>
-#include <deque>
-#include <bitset>
-#include <unordered_set>
-#include <unordered_map>
-#include <utility>
-#include <iterator>
-#include <ctime>
-#include <tuple>
-#include <numeric>
- 
+#include <bits/stdc++.h> // see /general/running-code-locally
 using namespace std;
 
+#define endl "\n"
+
 using ll = long long;
-using uint = unsigned int;
-using ull = unsigned long long;
-using ld = long double;
 
-#define ar array
-#define endl "\n" 
-#define hash_set unordered_set 
-#define hash_map unordered_map
-
-//vector
-#define all(x) begin(x), end(x) 
-#define rall(x) (x).rbegin(), (x).end()
-#define sz(x) (int)(x).size()
+//vectors
+using vi = vector<int>;
+#define all(x) begin(x), end(x)
+#define sz(x) int((x).size())
 #define pb push_back
-#define pf push_front
-#define ft front()
-#define bk back()
 
-//pairs and tuples
+//pairs
+using pi = pair<int,int>;
 #define f first
 #define s second
 #define mp make_pair
-#define mtp make_tuple
 
-void setIO(string name =""){
-	ios_base::sync_with_stdio(false);
-	cin.tie(nullptr);
-	if (name.size()){
-		freopen((name+".in").c_str(),"r",stdin);
-		freopen((name+".out").c_str(),"w",stdout);
+void setIO(string name = "") {
+	cin.tie(0)->sync_with_stdio(0); // see /general/fast-io
+	if (sz(name)) {
+		freopen((name+".in").c_str(), "r", stdin); // see /general/io
+		freopen((name+".out").c_str(), "w", stdout);
 	}
-	else {
-		#ifdef LOCAL 
-		freopen("input.txt", "r", stdin); 
-		freopen("error.txt", "w", stderr); 
-		freopen("output.txt", "w", stdout); 
-		#endif 
-	}
-	return;
 }
 
-const int mxN=3e5+10;
-int n,m,a,b; vector<int> adj[mxN]; bool visited[mxN];
-int visits,order[mxN];
+//constant initialization
+const string yes="YES\n",no="NO\n";
+const int MOD = 1e9+7; //998244353
+const int MX = 3e3+10;
+const ll INF = 1e18; //Not too close to LLONG_MAX
 
-void dfs(int node){
-	visited[node]=true; ++visits;
-	for (int u : adj[node]){
-		if (!visited[u]){
+//variables used for the current problem
+int N, M;
+vi adj[MX], nodes;
+bool visited[MX];
+int visits;
+
+void dfs(int node) {
+	visited[node] = true;
+	++visits;
+	for (int& u : adj[node]) {
+		if (!visited[u]) {
 			dfs(u);
 		}
 	}
-}
-
-void solve(){
-	cin >> n >> m;
-	for (int i=0;i<m;++i){
-		cin >> a >> b;
-		adj[a].pb(b); adj[b].pb(a);
-	}
-	for (int i=0;i<n;++i){
-		cin >> a; order[i]=a;
-	}
-	for (int i=0;i<n;++i){
-		visits=0; 
-		memset(visited,0,sizeof(visited));
-		for (int j=0;j<i;++j){
-			visited[order[j]]=true;
-			//cerr << order[j] << " ";
-		}
-		//cerr << endl;
-		dfs(order[n-1]);
-		if (visits==n-i) cout << "YES";
-		else cout << "NO";
-		cout << endl;
-	}
 	return;
 }
-// you should actually read the stuff below
-// read!read!read!read!read!read!read!read!read!
-// ll vs. int!
- 
-/* stuff you should look for
-* int overflow, array bounds
-* special cases (n=1?)
-* do smth instead of nothing and stay organized
-* WRITE STUFF DOWN
-* DON'T GET STUCK ON ONE APPROACH
-*/
-int main(){
-	string name="closing";
-	//string name="";
-	setIO(name);
-	//cout.tie(NULL);
-	//cin >> t;
-	//while (t--)
-	solve();
-	cerr<<"time taken : "<<(float)clock()/CLOCKS_PER_SEC <<" secs"<<endl; 
+
+int main() {
+	setIO("closing");
+	#ifdef LOCAL
+		freopen("input.txt", "r", stdin);
+	#endif //LOCAL
+	int N, M;
+	cin >> N >> M;
+	nodes.resize(N-1);
+	for (int i = 0; i < M; ++i) {
+		int u, v;
+		cin >> u >> v;
+		adj[u].pb(v);
+		adj[v].pb(u);
+	}
+	for (int i = 0; i < N - 1; ++i) {
+		cin >> nodes[i];
+		fill(visited,visited + N + 5, false);
+		for (int j = 0; j < i; ++j) visited[nodes[j]] = true;
+		visits = 0;
+		dfs(nodes[i]);
+		cout << (visits == N-i ? yes : no);
+	}
+	cout << yes;
 	return 0;
 }
