@@ -53,7 +53,6 @@ int main() {
 	#ifdef LOCAL
 		freopen("input.txt", "r", stdin);
 	#endif //LOCAL
-	int N, M;
 	cin >> N >> M;
 	nodes.resize(N-1);
 	for (int i = 0; i < M; ++i) {
