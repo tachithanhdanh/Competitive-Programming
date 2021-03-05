@@ -66,28 +66,20 @@ void dfs(int k) {
 	dfs(k+1);
 }
 
-int main() {
-	setIO("PERLIS");
-	//setIO();
+void sub1() {
 	//fuck, I don't know LIS DP
 	//Let's get partial points for this
-	//next_permutation O(N!)
+	//next_permutation O(N!*2^N)
 	// 30 % test cases
-	cin >> N;
-	A.resize(N);
-	B.resize(N);
-	iota(all(A),1);
-	for (int i = 0; i < N; ++i) {
-		cin >> B[i];
-	}
+	
 	//what I need to do is
 	//create a check function
 	//and a DFS function
 	//all set
 	//A = {4, 2, 1, 3};
+	iota(all(A),1);
 	do {
 		bool flag = true;
-
 		for (int i = 0; i < N; ++i) {
 			LIS = 0;
 			ans.pb(A[i]);
@@ -103,8 +95,28 @@ int main() {
 		//cout << endl;
 		if (flag) break;
 	} while (next_permutation(all(A)));
+}
+
+void sub2() {
+	vi G[N+1];
+	for (int i = 0; i < sz(B); ++i) G[B[i]].pb(i);
+	int res = N;
+	for (vi& Gi : G) for (int& i : Gi) A[i] = res--;
+}
+
+int main() {
+	//setIO("PERLIS");
+	setIO();
+	cin >> N;
+	A.resize(N);
+	B.resize(N);
+	for (int i = 0; i < N; ++i) {
+		cin >> B[i];
+	}
+	//if (N <= 10) sub1();
+	//got TLE for half of the test for subtask 1 so I'm not gonna use this brute-force approach anymore
+	sub2();
 	cout << *A.begin();
 	for (int i = 1; i < N; ++i) cout << " " << A[i];
 	return 0;
 }
-
