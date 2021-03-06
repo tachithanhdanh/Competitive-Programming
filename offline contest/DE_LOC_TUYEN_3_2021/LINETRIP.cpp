@@ -54,8 +54,8 @@ int main() {
 	// Must multiply by 2 (go back and forth)
 	// O(N)
 	for (int i = 0; i < N; ++i) {
-		if (X[i] > 0) maxX = max(maxX, X[i]);
-		if (X[i] < 0) minX = min(minX, X[i]);
+		maxX = max(maxX, X[i]);
+		minX = min(minX, X[i]);
 	}
 	cout << (maxX + (-minX)) * 2;
 	return 0;
