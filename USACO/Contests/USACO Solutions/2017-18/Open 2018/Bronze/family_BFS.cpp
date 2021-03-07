@@ -54,7 +54,6 @@ int main() {
 		string u, v;
 		cin >> v >> u;
 		E[i] = {u,v};
-		bool f1 = true, f2 = true;
 	}
 	for (int k = 1; k <= 2; ++k) {
 		queue<string> q;
