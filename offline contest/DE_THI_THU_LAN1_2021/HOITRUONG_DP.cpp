@@ -43,10 +43,7 @@ int dp[2][MX], End[2][MX];
 
 int main() {
 	setIO("HOITRUONG");
-	// ĐCM cay bài này vãi lồn
-	// Bài dễ chetme mà đéo chịu nghĩ cách là DP
-	// Mày ngu quá Danh ơi
-	// ĐCMM
+	// Time complexity: O(N^2) but can be optimized to O(N \log N) using binary search.
 	int N;
 	cin >> N;
 	vector<pi> req(N);
