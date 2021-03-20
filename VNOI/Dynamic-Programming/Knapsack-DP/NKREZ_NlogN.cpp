@@ -34,7 +34,7 @@ const int dx[4] = {1,0,-1,0}, dy[4] = {0,1,0,-1}; // for every grid problem!!
 
 //variables used for the current problem
 int dp[MX], End[MX];
-
+//https://vietcodes.github.io/code/93/index.html
 int main() {
 	setIO();
 	#ifdef LOCAL
@@ -49,10 +49,8 @@ int main() {
 		return t1.s < t2.s;
 	});
 	for (int i = 0; i < N; ++i) End[i] = req[i].s;
-	for (int i = 1; i <= N; ++i) {
-		dp[i] = dp[i-1];
-		dp[i] = max(dp[i], req[i-1].s - req[i-1].f + dp[upper_bound(End,End + N,req[i-1].f) - End]);
-	}
+	for (int i = 1; i <= N; ++i)
+		dp[i] = max(dp[i-1], req[i-1].s - req[i-1].f + dp[upper_bound(End,End + N,req[i-1].f) - End]);
 	cout << dp[N];
 	return 0;
 }
