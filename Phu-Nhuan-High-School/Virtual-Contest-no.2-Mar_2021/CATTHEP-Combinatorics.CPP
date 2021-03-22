@@ -43,8 +43,7 @@ int main() {
 	int N;
 	cin >> N;
 	ll ans = 1;
-	for (int i = N - 1; i >= N - 11; --i) ans *= i;
-	for (int i = 11; i >= 1; --i) ans /= i;
+	for (int i = N - 1; i >= N - 11; --i) { ans *= i; ans /= N - i; }
 	cout << ans;
 	return 0;
 }
