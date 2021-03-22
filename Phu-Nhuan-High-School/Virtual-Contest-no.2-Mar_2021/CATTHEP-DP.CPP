@@ -39,7 +39,7 @@ int main() {
 	setIO("CATTHEP");
 	int L;
 	cin >> L;
-	dp[0][0] = 1;
+	dp[0][0] = 1; // There is only one way to create sum 0 with 0 numbers.
 	for (int K = 1; K <= 12; ++K) for (int N = 1; N < 205; ++N) for (int i = 1; i <= N; ++i)
 		dp[K][N] += dp[K-1][N-i];
 	cout << dp[12][L];
