@@ -48,14 +48,14 @@ int main() {
 	}
 	/*
 	y = ax + b
-    y1 = ax1 + b
-    y2 = ax2 + b
-
-    => a = (y2-y1)/(x2-x1)
-    if (x2 == x1) then add INF
-    b = y1 - ax1
-    if a == k ? then don't add
-    */
+	y1 = ax1 + b
+	y2 = ax2 + b
+	
+	=> a = (y2-y1)/(x2-x1)
+	if (x2 == x1) then add INF
+	b = y1 - ax1
+	if a == k ? then don't add
+	*/
 	for (int i = 0; i < N; ++i) for (int j = i + 1; j < N; ++j) {
         X1 = X[i], Y1 = Y[i], X2 = X[j], Y2 = Y[j];
         if (X1 == X2) { s.insert(1e6); continue; }
