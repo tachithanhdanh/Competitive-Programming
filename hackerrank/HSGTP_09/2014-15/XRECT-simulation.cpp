@@ -43,9 +43,9 @@ int main() {
 	#endif //LOCAL
 	cin >> n;
 	for (int i = 0; i < n; ++i) {
-        cin >> x >> y >> t >> z;
-        x += 103; y += 103; t += 103; z += 103;
-        for (int X = x; X < t; ++X) for (int Y = z; Y < y; ++Y) grid[X][Y] = true;
+		cin >> x >> y >> t >> z;
+		x += 103; y += 103; t += 103; z += 103;
+		for (int X = x; X < t; ++X) for (int Y = z; Y < y; ++Y) grid[X][Y] = true;
 	}
 	for (int i = 0; i < MX; ++i) for (int j = 0; j < MX; ++j) ans += grid[i][j];
 	cout << ans;
