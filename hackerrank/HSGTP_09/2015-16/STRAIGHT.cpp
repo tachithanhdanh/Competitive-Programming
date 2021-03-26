@@ -57,11 +57,11 @@ int main() {
 	if a == k ? then don't add
 	*/
 	for (int i = 0; i < N; ++i) for (int j = i + 1; j < N; ++j) {
-        X1 = X[i], Y1 = Y[i], X2 = X[j], Y2 = Y[j];
-        if (X1 == X2) { s.insert(1e6); continue; }
-        // tinh he so goc K
-        K = double(Y2 - Y1) / (X2 - X1);
-        s.insert(K);
+		X1 = X[i], Y1 = Y[i], X2 = X[j], Y2 = Y[j];
+		if (X1 == X2) { s.insert(1e6); continue; }
+		// tinh he so goc K
+		K = double(Y2 - Y1) / (X2 - X1);
+		s.insert(K);
 	}
 	//for (auto a : s) cout << a << endl;
 	cout << sz(s);
