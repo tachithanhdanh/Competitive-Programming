@@ -43,12 +43,12 @@ int main() {
 	#endif // LOCAL
 	cin >> m >> t >> u >> f >> d;
 	for (int i = 0; i < t; ++i) {
-        cin >> dir;
-        if (dir == 'f') sum += 2*f;
-        else sum += d + u;
-        if (sum > m) {
-            cout << i; return 0;
-        }
+		cin >> dir;
+		if (dir == 'f') sum += 2*f;
+		else sum += d + u;
+		if (sum > m) {
+			cout << i; return 0;
+		}
 	}
 	cout << t;
 	return 0;
