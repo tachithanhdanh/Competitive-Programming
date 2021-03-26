@@ -39,7 +39,7 @@ int main() {
 	setIO();
 	#ifdef LOCAL
 		freopen("input.txt", "r", stdin);
-	#endif //LOCAL
+	#endif // LOCAL
 	cin >> n;
 	cout << n;
 	return 0;
