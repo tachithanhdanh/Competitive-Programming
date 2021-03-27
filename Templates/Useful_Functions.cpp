@@ -54,7 +54,7 @@ void sieve() {
 void more_effective_sieve(){
 	p[0] = 2; p[1] = 3;
 	int pos = 2;
-	for (int i = 5, t = 2; i * i <= n; i += t, t = 6 – t) {
+	for (int i = 5, t = 2; i * i <= n; i += t, t = 6 - t) {
 		bool f = true;
 		for (int j : p) {
 			if (j * j > i) break;
