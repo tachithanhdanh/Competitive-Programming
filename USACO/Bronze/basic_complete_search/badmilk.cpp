@@ -27,10 +27,6 @@ void setIO(string name =""){
 	return;
 }
 
-//constant initialization
-const string yes="YES",no="NO";
-const int mod=1e9+7;
-
 //variables used for the current problem
 int N,M,D,S,m,p,t,sick[51],possible[51],cnt,ans,badmilk; 
 vector<vector<pair<int,int>>> v;
