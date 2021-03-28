@@ -17,6 +17,9 @@ using pi = pair<int,int>;
 #define s second
 #define mp make_pair
 
+//for printing variables when debugging
+#define debug(x) cout << (#x) << " is " << (x) << endl
+
 void setIO(string name = "") {
 	cin.tie(0)->sync_with_stdio(0); // see /general/fast-io
 	if (sz(name)) {
