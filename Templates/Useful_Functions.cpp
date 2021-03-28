@@ -17,6 +17,10 @@ void setIO(string name =""){
 	return;
 }
 
+//for printing variables when debugging
+//documentation: https://codeforces.com/blog/entry/65543
+#define debug(x) cout << (#x) << " is " << (x) << endl
+
 //constant initialization
 const string yes="YES",no="NO";
 const int MOD=1e9+7;
