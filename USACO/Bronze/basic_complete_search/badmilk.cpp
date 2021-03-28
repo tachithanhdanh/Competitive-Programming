@@ -3,9 +3,7 @@ using namespace std;
 
 using ll = long long;
 
-#define endl "\n" 
-
-//vector
+//vectors
 using vi = vector<int>;
 #define all(x) begin(x), end(x) 
 #define sz(x) (int)(x).size()
