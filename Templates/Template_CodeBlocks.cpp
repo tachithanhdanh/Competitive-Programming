@@ -24,6 +24,10 @@ using pi = pair<int,int>;
 #define debug(x)
 #endif // LOCAL
 
+//Set min-max value.
+template<class T> bool ckmin(T& a, const T& b) { return b < a ? a = b, 1 : 0; } // set a = min(a,b)
+template<class T> bool ckmax(T& a, const T& b) { return b > a ? a = b, 1 : 0; } // set a = max(a,b)
+
 void setIO(string name = "") {
 	cin.tie(0)->sync_with_stdio(0); // see /general/fast-io
 	if (sz(name)) {
