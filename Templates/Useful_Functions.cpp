@@ -17,9 +17,14 @@ void setIO(string name =""){
 	return;
 }
 
-//for printing variables when debugging
 //documentation: https://codeforces.com/blog/entry/65543
+//Briefer version: https://cs.wmich.edu/~rhardin/cs111/debug.htm
+//for printing variables when debugging
+#ifdef LOCAL
 #define debug(x) cout << (#x) << " is " << (x) << endl
+#else
+#define debug(x)
+#endif // LOCAL
 
 //constant initialization
 const string yes="YES",no="NO";
