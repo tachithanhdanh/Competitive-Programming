@@ -49,7 +49,7 @@ int n;
 int main() {
 	setIO();
 	#ifdef LOCAL
-		freopen("input.txt", "r", stdin);
+	freopen("input.txt", "r", stdin);
 	#endif // LOCAL
 	cin >> n;
 	cout << n;
