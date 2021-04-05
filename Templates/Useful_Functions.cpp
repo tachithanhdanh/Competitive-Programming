@@ -155,7 +155,8 @@ ll fast_pow_with_mod (ll x, uint y)
 ll modular_inverse (ll x) {
 	return fast_pow_with_mod(x,MOD-2);
 }
-	
+
+// https://nguyenvanhieu.vn/thuat-toan-tim-uoc-chung-lon-nhat/#cach-3-tim-ucln-su-dung-giai-thuat-euclid
 int GCD (int a, int b) {
 	if (b>a) swap(a,b);
 	while (b){
