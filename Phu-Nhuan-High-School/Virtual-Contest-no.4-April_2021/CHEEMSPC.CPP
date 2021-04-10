@@ -62,10 +62,6 @@ int main() {
 		usedP2 = min(dT1,T2)*P2;
 		usedP3 = dT2*P3;
 		P += usedP1 + usedP2 + usedP3;
-		//debug(usedP1);
-		//debug(usedP2);
-		//debug(usedP3);
-		//debug(P);
 	}
 	cout << P;
 	return 0;
