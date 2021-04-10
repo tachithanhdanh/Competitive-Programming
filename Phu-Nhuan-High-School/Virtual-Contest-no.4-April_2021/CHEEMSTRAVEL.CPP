@@ -31,15 +31,15 @@ template<class T> bool ckmax(T& a, const T& b) { return b > a ? a = b, 1 : 0; } 
 void setIO(string name = "") {
 	cin.tie(0)->sync_with_stdio(0); // see /general/fast-io
 	if (sz(name)) {
-		freopen((name+".in").c_str(), "r", stdin); // see /general/io
-		freopen((name+".out").c_str(), "w", stdout);
+		freopen((name+".INP").c_str(), "r", stdin); // see /general/io
+		freopen((name+".OUT").c_str(), "w", stdout);
 	}
 }
 
 //constant initialization
 const string yes="YES\n",no="NO\n";
 const int MOD = 1e9+7; //998244353
-const int MX = 2e6+10;
+const int MX = 1e2+10;
 const ll INF = 1e18; //Not too close to LLONG_MAX
 const int dx[4] = {1,0,-1,0}, dy[4] = {0,1,0,-1}; // for every grid problem!!
 
@@ -74,6 +74,7 @@ int main() {
 		dist[B][A] = C;
 	}
 	for (int i = 0; i < 2; ++i) {
+		memset(visited,false,sizeof(visited));
 		curdist = dist[1][adj[1][i]] + dist[adj[1][1-i]][1];
 		visited[1] = true;
 		dfs(adj[1][i]);
