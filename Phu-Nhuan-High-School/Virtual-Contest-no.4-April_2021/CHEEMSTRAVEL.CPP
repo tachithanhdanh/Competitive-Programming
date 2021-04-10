@@ -31,52 +31,29 @@ template<class T> bool ckmax(T& a, const T& b) { return b > a ? a = b, 1 : 0; } 
 void setIO(string name = "") {
 	cin.tie(0)->sync_with_stdio(0); // see /general/fast-io
 	if (sz(name)) {
-		freopen((name+".INP").c_str(), "r", stdin); // see /general/io
-		freopen((name+".OUT").c_str(), "w", stdout);
+		freopen((name+".in").c_str(), "r", stdin); // see /general/io
+		freopen((name+".out").c_str(), "w", stdout);
 	}
 }
 
 //constant initialization
 const string yes="YES\n",no="NO\n";
 const int MOD = 1e9+7; //998244353
-const int MX = 1e2+10;
+const int MX = 2e6+10;
 const ll INF = 1e18; //Not too close to LLONG_MAX
 const int dx[4] = {1,0,-1,0}, dy[4] = {0,1,0,-1}; // for every grid problem!!
 
 //variables used for the current problem
 int dist[MX][MX], N, mindist = MOD, curdist;
-vector<pair<int,int>> adj[MX];
+vi adj[MX];
 bool visited[MX];
-
-/*
-void dfs(int node, int curdist, int cnt) {
-	//visited[node] = true;
-	if (cnt == N) {
-		ckmin(mindist,curdist); return;
-	}
-	int minD = MOD;
-	for (int i = 1; i <= N; ++i) {
-		if (!visited[i]) {
-			ckmin(minD,dist[node][i]);
-		}
-	}
-	if (minD == MOD) return;
-	for (int i = 1; i <= N; ++i) {
-		if (dist[node][i] == minD && !visited[i]) {
-			visited[i] = true;
-			dfs(i,curdist+dist[node][i],cnt+1);
-			visited[i] = false;
-		}
-	}
-}
-*/
 
 void dfs(int node) {
 	visited[node] = true;
-	for (pi& p : adj[node]) {
-		if (!visited[p.f]) {
-			curdist += p.s;
-			dfs(p.f);
+	for (int& u : adj[node]) {
+		if (!visited[u]) {
+			curdist += dist[node][u];
+			dfs(u);
 		}
 	}
 	return;
@@ -88,35 +65,19 @@ int main() {
 	freopen("input.txt", "r", stdin);
 	#endif // LOCAL
 	cin >> N;
-	for (int i = 0; i < MX; ++i) fill(all(dist[i]),MOD);
-	for (int i = 0; i < MX; ++i) dist[i][i] = 0;
 	for (int i = 0; i < N; ++i) {
 		int A, B, C;
 		cin >> A >> B >> C;
-		adj[A].pb(mp(B,0));
-		adj[B].pb(mp(A,C));
+		adj[A].pb(B);
+		adj[B].pb(A);
 		dist[A][B] = 0;
 		dist[B][A] = C;
 	}
-	/*
-	for (int k = 1; k <= N; ++k)
-		for (int i = 1; i <= N; ++i)
-			for (int j = 1; j <= N; ++j)
-				ckmin(dist[i][j],dist[i][k]+dist[k][j]);
-	*/
-	for (int i = 1; i <= N; ++i) {
-		for (int j = 0; j < 2; ++j) {
-			memset(visited,false,sizeof(visited));
-			curdist = dist[i][adj[i][j].f] + dist[adj[i][1-j].f][i];
-			visited[i] = true;
-			dfs(adj[i][j].f);
-			//debug(i);
-			//debug(adj[i][j].f);
-			//debug(adj[i][1-j].f);
-			//debug(curdist);
-			cout << endl;
-			ckmin(mindist,curdist);
-		}
+	for (int i = 0; i < 2; ++i) {
+		curdist = dist[1][adj[1][i]] + dist[adj[1][1-i]][1];
+		visited[1] = true;
+		dfs(adj[1][i]);
+		ckmin(mindist,curdist);
 	}
 	cout << mindist;
 	return 0;
