@@ -39,7 +39,7 @@ void setIO(string name = "") {
 //constant initialization
 const string yes="YES\n",no="NO\n";
 const int MOD = 1e9+7; //998244353
-const int MX = 2e6+10;
+const int MX = 1e5+10;
 const ll INF = 1e18; //Not too close to LLONG_MAX
 const int dx[4] = {1,0,-1,0}, dy[4] = {0,1,0,-1}; // for every grid problem!!
 
