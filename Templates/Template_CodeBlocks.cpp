@@ -19,7 +19,7 @@ using pi = pair<int,int>;
 
 //for printing variables when debugging
 #ifdef LOCAL
-#define debug(x) cout << (#x) << " is " << (x) << endl
+#define debug(x) cerr << (#x) << " is " << (x) << endl
 #else
 #define debug(x)
 #endif // LOCAL
