@@ -59,16 +59,13 @@ bool isEmpty(const int& x, const int& y) {
 	return false;
 }
 
-void ff(int& x, int&
-		 y) {
+void ff(int& x, int& y) {
 	visited[x][y] = true;
 	++area;
 	for (int i = 0; i < 4; ++i) {
 		int X = x+dx[i], Y = y+dy[i];
-		if (isvalid(X,Y))
-			ff(X,Y);
-		if(isEmpty(X,Y))
-			++p;
+		if (isvalid(X,Y)) ff(X,Y);
+		if (isEmpty(X,Y)) ++p;
 	}
 }
 
