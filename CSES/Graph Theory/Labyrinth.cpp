@@ -42,7 +42,7 @@ const int MOD = 1e9+7; //998244353
 const int MX = 1e3+10;
 const ll INF = 1e18; //Not too close to LLONG_MAX
 const int dx[4] = {1,0,-1,0}, dy[4] = {0,1,0,-1}; // for every grid problem!!
-const int d[4] = {'D', 'R', 'U', 'L'};
+const char dc[4] = {'D', 'R', 'U', 'L'};
 
 //variables used for the current problem
 int N, M, dist[MX][MX], xA, yA, xB, yB;
@@ -80,7 +80,7 @@ int main() {
 			int x = node.f+dx[i], y = node.s+dy[i];
 			if (isValid(x,y)) {
 				dist[x][y] = dist[node.f][node.s]+1;
-				trace[x][y] = d[i];
+				trace[x][y] = dc[i];
 				q.push(mp(x,y));
 			}
 		}
