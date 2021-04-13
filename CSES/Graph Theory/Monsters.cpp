@@ -113,10 +113,15 @@ int main() {
 	for (int i = 0; i < sz(ESC); ++i) {
 		ckmin(D[i],dist[ESC[i].f][ESC[i].s]);
 	}
+	
+	// BFS with A
 	BFS(A);
+	
 	for (int i = 0; i < sz(ESC); ++i) {
 		int x = ESC[i].f, y = ESC[i].s;
-		if (dist[x][y] < D[i]) {
+		
+		// If the distance from A a square boundary is less than from all monsters then Traceback the shortest path.
+		if (dist[x][y] < D[i]) { 
 			cout << yes << dist[x][y] << endl;
 			do {
 				int dir = d[x][y];
