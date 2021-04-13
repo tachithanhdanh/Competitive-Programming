@@ -87,6 +87,8 @@ int main() {
 	}
 	if (dist[xB][yB] == MOD) return cout << no, 0;
 	cout << yes << dist[xB][yB] << endl;
+	
+	// Shortest path Traceback
 	int x = xB, y = yB;
 	do {
 		path.pb(trace[x][y]);
