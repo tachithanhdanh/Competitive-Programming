@@ -1,0 +1,1 @@
+[Contest link](https://www.hackerrank.com/contests/olympic-b-contest-1/challenges)
