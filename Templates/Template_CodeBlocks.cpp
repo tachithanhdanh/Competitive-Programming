@@ -19,9 +19,9 @@ using pi = pair<int,int>;
 
 //for printing variables when debugging
 #ifdef LOCAL
-#define debug(x) cerr << (#x) << " is " << (x) << endl
+#define db(x) cerr << (#x) << " is " << (x) << endl
 #else
-#define debug(x)
+#define db(x)
 #endif // LOCAL
 
 //Set min-max value.
