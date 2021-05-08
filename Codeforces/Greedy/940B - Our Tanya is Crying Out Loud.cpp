@@ -68,12 +68,9 @@ int main() {
 			N /= K;
 		}
 		else {
-			int dif = N-N/K*K;
-			ans += 1LL*A*dif;
-			N = N/K*K;
+			ans += 1LL*A*(N%K);
+			N = N-(N%K);
 		}
-		//cout << N << ' ' << ans << endl;
-		//if (!N) break;
 	}
 	cout << ans;
 	return 0;
