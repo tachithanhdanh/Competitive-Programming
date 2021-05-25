@@ -10,7 +10,7 @@ using str = string;
 using vi = vector<int>;
 using vl = vector<ll>;
 using vb = vector<bool>;
-using vs = vector<string>;
+using vs = vector<str>;
 #define all(x) begin(x), end(x)
 #define sz(x) int((x).size())
 #define pb push_back
@@ -30,7 +30,7 @@ using vpi = vector<pi>;
 #endif // LOCAL
 
 //constant initialization
-const string yes="YES\n",no="NO\n";
+const str yes="YES\n",no="NO\n";
 const int MOD = 1e9+7; //998244353
 const int MX = 2e4+10;
 const ll INF = 1e18; //Not too close to LLONG_MAX
