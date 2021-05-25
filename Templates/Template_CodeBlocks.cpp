@@ -7,12 +7,15 @@ using ll = long long;
 
 //vectors
 using vi = vector<int>;
+using vl = vector<ll>;
+using vb = vector<bool>;
 #define all(x) begin(x), end(x)
 #define sz(x) int((x).size())
 #define pb push_back
 
 //pairs
 using pi = pair<int,int>;
+using vpi = vector<pi>;
 #define f first
 #define s second
 #define mp make_pair
@@ -23,6 +26,14 @@ using pi = pair<int,int>;
 #else
 #define db(x)
 #endif // LOCAL
+
+//constant initialization
+const string yes="YES\n",no="NO\n";
+const int MOD = 1e9+7; //998244353
+const int MX = 2e4+10;
+const ll INF = 1e18; //Not too close to LLONG_MAX
+const int dx[4] = {1,0,-1,0}, dy[4] = {0,1,0,-1}; // for every grid problem!!
+const char dc[4] = {'r', 'u', 'l', 'd'};
 
 //Set min-max value.
 template<class T> bool ckmin(T& a, const T& b) { return b < a ? a = b, 1 : 0; } // set a = min(a,b)
@@ -36,22 +47,10 @@ void setIO(string name = "") {
 	}
 }
 
-//constant initialization
-const string yes="YES\n",no="NO\n";
-const int MOD = 1e9+7; //998244353
-const int MX = 1e5+10;
-const ll INF = 1e18; //Not too close to LLONG_MAX
-const int dx[4] = {1,0,-1,0}, dy[4] = {0,1,0,-1}; // for every grid problem!!
-
-//variables used for the current problem
-int n;
-
 int main() {
 	setIO();
 	#ifdef LOCAL
 	freopen("input.txt", "r", stdin);
 	#endif // LOCAL
-	cin >> n;
-	cout << n;
-	return 0;
+ 	return 0;
 }
