@@ -30,7 +30,7 @@ using vpi = vector<pi>;
 #endif // LOCAL
 
 //constant initialization
-const string yes="YES\n",no="NO\n";
+const str yes="YES\n",no="NO\n";
 const int MOD = 1e9+7; //998244353
 const int MX = 2e4+10;
 const ll INF = 1e18; //Not too close to LLONG_MAX
