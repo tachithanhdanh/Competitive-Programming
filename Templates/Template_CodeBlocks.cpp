@@ -4,11 +4,13 @@ using namespace std;
 #define endl "\n"
 
 using ll = long long;
+using str = string;
 
 //vectors
 using vi = vector<int>;
 using vl = vector<ll>;
 using vb = vector<bool>;
+using vs = vector<string>;
 #define all(x) begin(x), end(x)
 #define sz(x) int((x).size())
 #define pb push_back
