@@ -56,10 +56,10 @@ int main() {
 	#endif // LOCAL
 	int K, N;
 	cin >> K >> N;
-	vector<string> mem(N);
-	vector<vector<string>> contri(K,vector<string>(N));
+	vs mem(N);
+	vector<vs> contri(K,vs(N));
 	vector<vi> ranking(K,vi(N)), pos(N,vi(K));
-	for (string& S : mem) cin >> S;
+	for (str& S : mem) cin >> S;
 	for (int i = 0; i < K; ++i) {
 		for (int j = 0; j < N; ++j) {
 			cin >> contri[i][j];
