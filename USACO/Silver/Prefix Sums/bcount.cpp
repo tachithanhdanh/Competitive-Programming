@@ -1,123 +1,78 @@
-#include <bits/stdc++.h>
-#include <sstream>
-#include <iostream>
-#include <fstream>
-#include <iomanip>
-#include <cstdio>
-#include <cmath>
-#include <cstring>
-#include <cctype>
-#include <climits>
-#include <cfloat>
-#include <string>
-#include <algorithm>
-#include <functional>
-#include <vector>
-#include <list>
-#include <array>
-#include <set>
-#include <map>
-#include <stack>
-#include <queue>
-#include <deque>
-#include <bitset>
-#include <unordered_set>
-#include <unordered_map>
-#include <utility>
-#include <iterator>
-#include <ctime>
-#include <tuple>
-#include <numeric>
- 
+#include <bits/stdc++.h> // see /general/running-code-locally
 using namespace std;
 
+#define endl "\n"
+
 using ll = long long;
-using uint = unsigned int;
-using ull = unsigned long long;
-using ld = long double;
+using str = string;
 
-#define ar array
-#define endl "\n" 
-#define hash_set unordered_set 
-#define hash_map unordered_map
-
-//vector
-#define vt vector
-#define all(x) begin(x), end(x) 
-#define rall(x) (x).rbegin(), (x).end()
-#define sz(x) (int)(x).size()
+//vectors
+using vi = vector<int>;
+using vl = vector<ll>;
+using vb = vector<bool>;
+using vs = vector<str>;
+#define all(x) begin(x), end(x)
+#define sz(x) int((x).size())
 #define pb push_back
-#define pf push_front
-#define ft front()
-#define bk back()
-#define ins insert
-#define lb lower_bound
-#define up upper_bound
 
-//pairs and tuples
+//pairs
+using pi = pair<int,int>;
+using vpi = vector<pi>;
 #define f first
 #define s second
 #define mp make_pair
-#define mtp make_tuple
 
-void setIO(string name =""){
-	ios_base::sync_with_stdio(false);
-	cin.tie(nullptr);
-	if (name.size()){
-		freopen((name+".in").c_str(),"r",stdin);
-		freopen((name+".out").c_str(),"w",stdout);
+//for printing variables when debugging
+#ifdef LOCAL
+#define db(x) cerr << (#x) << " is " << (x) << endl
+#else
+#define db(x)
+#endif // LOCAL
+
+//constant initialization
+const str yes="YES\n",no="NO\n";
+const int MOD = 1e9+7; //998244353
+const int MX = 1e5+10;
+const ll INF = 1e18; //Not too close to LLONG_MAX
+const int dx[4] = {1,0,-1,0}, dy[4] = {0,1,0,-1}; // for every grid problem!!
+const char dc[4] = {'r', 'u', 'l', 'd'};
+
+//Set min-max value.
+template<class T> bool ckmin(T& a, const T& b) { return b < a ? a = b, 1 : 0; } // set a = min(a,b)
+template<class T> bool ckmax(T& a, const T& b) { return b > a ? a = b, 1 : 0; } // set a = max(a,b)
+
+void setIO(string name = "") {
+	cin.tie(0)->sync_with_stdio(0); // see /general/fast-io
+	if (sz(name)) {
+		freopen((name+".in").c_str(), "r", stdin); // see /general/io
+		freopen((name+".out").c_str(), "w", stdout);
 	}
-	else {
-		#ifdef LOCAL 
-		freopen("input.txt", "r", stdin); 
-		freopen("error.txt", "w", stderr); 
-		freopen("output.txt", "w", stdout); 
-		#endif 
-	}
-	return;
 }
 
-int cnt[4][100010],q,n,a,b;
+int N, Q, dp[4][MX];
 
-void solve(){
-	cin >> n >> q;
-	for (int i=1;i<=n;++i){
+int main() {
+	setIO("bcount");
+	#ifdef LOCAL
+	freopen("input.txt", "r", stdin);
+	#endif // LOCAL
+	cin >> N >> Q;
+	for (int i = 1; i <= N; ++i) {
+		int a;
 		cin >> a;
-		++cnt[a][i];
+		++dp[a][i];
 	}
-	for (int m=1;m<=3;++m)	{
-		for (int i=1;i<=n+6;++i) {
-			cnt[m][i]+=cnt[m][i-1];
-			//cerr << cnt[m][i] << " ";
+	for (int i = 1; i <= 3; ++i) {
+		for (int j = 1; j <= N; ++j) {
+			dp[i][j] += dp[i][j-1];
 		}
-		//cerr << endl;
 	}
-	for (int i=0;i<q;++i){
+	while (Q--) {
+		int a, b;
 		cin >> a >> b;
-		cout << cnt[1][b]-cnt[1][a-1] << " " << cnt[2][b]-cnt[2][a-1] << " " << cnt[3][b]-cnt[3][a-1] << endl;
-	}	
-	return; 
-}
-// you should actually read the stuff below
-// read!read!read!read!read!read!read!read!read!
-// ll vs. int!
- 
-/* stuff you should look for
-* int overflow, array bounds
-* special cases (n=1?)
-* do smth instead of nothing and stay organized
-* WRITE STUFF DOWN
-* DON'T GET STUCK ON ONE APPROACH
-*/
-int main(){
-	string name="bcount";
-	//string name="";
-	setIO(name);
-	//cout.tie(NULL);
-	//generate();
-	//cin >> t;
-	//while (t--)
-	solve();
-	cerr<<"time taken : "<<(float)clock()/CLOCKS_PER_SEC <<" secs"<<endl; 
-	return 0;
+		for (int i = 1; i <= 3; ++i) {
+			cout << dp[i][b] - dp[i][a-1] << " \n"[i==3];
+		}
+	}
+ 	return 0;
 }
