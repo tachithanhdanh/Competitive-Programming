@@ -59,13 +59,10 @@ int main() {
 	freopen("input.txt", "r", stdin);
 	#endif // LOCAL
 	cin >> N >> S;
-	for (int i = 0; i < N; ++i) {
-		for (int j = 0; j < S; ++j) {
-			for (int k = 0; k < S; ++k) {
+	for (int i = 0; i < N; ++i)
+		for (int j = 0; j < S; ++j)
+			for (int k = 0; k < S; ++k)
 				cin >> C[0][i][j][k];
-			}
-		}
-	}
 	cin >> W >> H;
 	for (int i = 0; i < H; ++i) {
 		for (int j = 0; j < W; ++j) {
