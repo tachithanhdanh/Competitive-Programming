@@ -105,7 +105,7 @@ int main() {
 		}
 	}
 	for (int i = 0; i < H; ++i) {
-		for	(int j = 0; j < S; ++j) {
+		for (int j = 0; j < S; ++j) {
 			for (int k = 0; k < W; ++k)
 				for (int p = 0; p < S; ++p)
 					cout << ans[i][k][j][p];
