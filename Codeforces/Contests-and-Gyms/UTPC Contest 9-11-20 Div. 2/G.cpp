@@ -50,8 +50,7 @@ void setIO(string name = "") {
 }
 
 int N, S, W, H, type, Ci;
-char C[6][16][16][16], ans[101][101][16][16], result[16][16], pre[16][16];
-str query;
+char C[6][16][16][16], ans[101][101][16][16], result[16][16], pre[16][16], q1, q2, trash;
 pi q[101][101];
 
 int main() {
@@ -70,83 +69,46 @@ int main() {
 	cin >> W >> H;
 	for (int i = 0; i < H; ++i) {
 		for (int j = 0; j < W; ++j) {
-			cin >> query;
-			q[i][j] = mp(query[0]-'0',query[2]-'0');
+			cin >> q1 >> trash >> q2;
+			q[i][j] = mp(q1-48,q2-48);
 		}
 	}
 	for (int i = 0; i < N; ++i) {
 		for (int j = 0; j < 6; ++j) {
+			if (!j) {
+				for (int k = 0; k < S; ++k)
+					for (int p = 0; p < S; ++p)
+						result[k][p] = C[j][i][k][p];
+				continue;
+			}
+			for (int k = 0; k < S; ++k)
+				for (int p = 0; p < S; ++p)
+					pre[k][p] = result[k][p]; //copy data
 			for (int k = 0; k < S; ++k) {
 				for (int p = 0; p < S; ++p) {
-					pre[k][p] = result[k][p];
+					if (j && j < 4) result[p][S-k-1] = pre[k][p];
+					if (j == 4) result[k][S-p-1] = C[0][i][k][p];
+					if (j == 5) result[S-k-1][p] = C[0][i][k][p];
 				}
 			}
-			if (j && j < 4) {
-				for (int k = 0; k < S; ++k) {
-					for (int p = 0; p < S; ++p) {
-						result[p][S-k-1] = pre[k][p];
-					}
-				}
-			}
-			else if (j == 4) {
-				for (int k = 0; k < S; ++k) {
-					for (int p = 0; p < S; ++p) {
-						result[k][S-p-1] = C[0][i][k][p];
-					}
-				}
-			}
-			else if (j == 5) {
-				for (int k = 0; k < S; ++k) {
-					for (int p = 0; p < S; ++p) {
-						result[S-k-1][p] = C[0][i][k][p];
-					}
-				}
-			}
-			if (j) {
-				for (int k = 0; k < S; ++k) {
-					for (int p = 0; p < S; ++p) {
-						C[j][i][k][p] = result[k][p];
-					}
-				}
-			}
-			else {
-				for (int k = 0; k < S; ++k) {
-					for (int p = 0; p < S; ++p) {
-						result[k][p] = C[j][i][k][p];
-					}
-				}
-			}
+			for (int k = 0; k < S; ++k)
+				for (int p = 0; p < S; ++p)
+					C[j][i][k][p] = result[k][p];
 		}
 	}
-	/*
-	for (int i = 0; i < 6; ++i) {
-		for (int j = 0; j < S; ++j) {
-			for (int k = 0; k < S; ++k) {
-				cout << C[i][0][j][k];
-			}
-			cout << endl;
-		}
-		cout << endl;
-	}
-	*/
 	for (int i = 0; i < H; ++i) {
 		for (int j = 0; j < W; ++j) {
-			Ci = q[i][j].f;
-			type = q[i][j].s;
-			for (int k = i*S; k < (i+1)*S; ++k) {
-				for (int p = j*S; p < (j+1)*S; ++p)	{
+			Ci = q[i][j].f, type = q[i][j].s;
+			for (int k = i*S; k < (i+1)*S; ++k)
+				for (int p = j*S; p < (j+1)*S; ++p)
 					ans[i][j][k-i*S][p-j*S] = C[type][Ci][k-i*S][p-j*S];
-				}
-			}
 		}
 	}
 	for (int i = 0; i < H; ++i) {
 		for	(int j = 0; j < S; ++j) {
-			for (int k = 0; k < W; ++k) {
-				for (int p = 0; p < S; ++p) {
+			for (int k = 0; k < W; ++k)
+				for (int p = 0; p < S; ++p)
 					cout << ans[i][k][j][p];
-				}
-			}
 			cout << endl;
 		}
 	}
