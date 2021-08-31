@@ -91,7 +91,7 @@ vector<pi> prime_factorization (int n) {
 	}
 	if (cnt) factors.pb(mp(3,cnt));
 	cnt = 0;
-	for (int i = 5, t = 2; i * i <= n; i += t, t = 6 – t) {
+	for (int i = 5, t = 2; i * i <= n; i += t, t = 6 - t) {
 		if (n % i == 0) {
 			cnt = 0;
 			while (n % i == 0) {
