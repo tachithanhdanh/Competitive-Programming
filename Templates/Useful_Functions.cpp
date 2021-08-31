@@ -83,7 +83,7 @@ void more_effective_sieve(){
 vector<pi> prime_factorization (int n) {
 	vector<pi> factors;
 	int cnt = 0;
-	while (!(n&1)) n >>= 2, ++cnt;
+	while (!(n&1)) n >>= 1, ++cnt;
 	if (cnt) factors.pb(mp(2,cnt));
 	cnt = 0;
 	while (n % 3 == 0) {
@@ -158,7 +158,6 @@ ll modular_inverse (ll x) {
 
 // https://nguyenvanhieu.vn/thuat-toan-tim-uoc-chung-lon-nhat/#cach-3-tim-ucln-su-dung-giai-thuat-euclid
 int GCD (int a, int b) {
-	if (b>a) swap(a,b);
 	while (b){
 		swap(a,b);
 		b=b%a;
