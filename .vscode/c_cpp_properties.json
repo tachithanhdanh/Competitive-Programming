@@ -1,0 +1,48 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceFolder}/**"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE",
+                "LOCAL"
+            ],
+            "compilerPath": "C:\\msys64\\mingw64\\bin\\gcc.exe",
+            "cStandard": "gnu17",
+            "cppStandard": "c++20",
+            "intelliSenseMode": "windows-gcc-x64",
+            "compilerArgs": [
+                "-Wall ",
+                "-Wextra ",
+                "-pedantic ",
+                "-std=c++20 ",
+                "-O2 ",
+                "-Wshadow ",
+                "-Wformat=2 ",
+                "-Wfloat-equal ",
+                "-Wconversion ",
+                "-Wlogical-op ",
+                "-Wshift-overflow=2 ",
+                "-Wduplicated-cond ",
+                "-Wcast-qual ",
+                "-Wcast-align ",
+                "-D_GLIBCXX_DEBUG ",
+                "-D_GLIBCXX_DEBUG_PEDANTIC ",
+                "-D_FORTIFY_SOURCE=2 ",
+                // https://stackoverflow.com/questions/67619314/cannot-use-fsanitize-address-in-mingw-compiler
+                // https://stackoverflow.com/questions/55018627/cannot-find-lasan-using-address-sanitizer-in-qt-creator-in-windows-mingw/55019187#55019187
+                // https://stackoverflow.com/questions/31144000/mingw-w64s-gcc-and-address-sanitizer/31151497
+                // "-fsanitize=address",
+                // "-fsanitize=undefined",
+                // "-fno-sanitize-recover",
+                "-fstack-protector",
+                "-Wl,--stack=268435456"
+            ]
+        }
+    ],
+    "version": 4
+}
