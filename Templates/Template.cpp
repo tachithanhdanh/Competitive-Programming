@@ -22,6 +22,10 @@ using vpi = vector<pi>;
 #define s second
 #define mp make_pair
 
+// set min-max value.
+template<typename T> bool ckmin(T& a, const T& b) { return b < a ? a = b, 1 : 0; } // set a = min(a,b)
+template<typename T> bool ckmax(T& a, const T& b) { return b > a ? a = b, 1 : 0; } // set a = max(a,b)
+
 // constant initialization
 const str yes="YES\n", no="NO\n";
 const int MOD = 1e9 + 7; // 998244353;
@@ -29,10 +33,6 @@ const int MX = 2e4 + 10;
 const ll INF = 1e18; // Not too close to LLONG_MAX
 const int dx[4] = {1, 0, -1, 0}, dy[4] = {0, 1, 0, -1}; // for every grid problem!!
 const char dc[4] = {'r', 'u', 'l', 'd'};
-
-// set min-max value.
-template<typename T> bool ckmin(T& a, const T& b) { return b < a ? a = b, 1 : 0; } // set a = min(a,b)
-template<typename T> bool ckmax(T& a, const T& b) { return b > a ? a = b, 1 : 0; } // set a = max(a,b)
 
 void solve() {
 	
