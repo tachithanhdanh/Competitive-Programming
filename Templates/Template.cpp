@@ -34,20 +34,12 @@ const char dc[4] = {'r', 'u', 'l', 'd'};
 template<typename T> bool ckmin(T& a, const T& b) { return b < a ? a = b, 1 : 0; } // set a = min(a,b)
 template<typename T> bool ckmax(T& a, const T& b) { return b > a ? a = b, 1 : 0; } // set a = max(a,b)
 
-void setIO(string name = "") {
-	cin.tie(0)->sync_with_stdio(0); // see /general/fast-io
-	if (sz(name)) {
-		freopen((name+".in").c_str(), "r", stdin); // see /general/io
-		freopen((name+".out").c_str(), "w", stdout);
-	}
-}
-
 void solve() {
 	
 }
 
 int main() {
-	setIO();
+	cin.tie(0)->sync_with_stdio(0); // see /general/fast-io
 	#ifdef LOCAL
 	freopen("input.txt", "r", stdin);
 	#endif // LOCAL
