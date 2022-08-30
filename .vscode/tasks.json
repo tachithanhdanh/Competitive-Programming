@@ -30,7 +30,7 @@
                 // "-fsanitize=undefined",
                 // "-fno-sanitize-recover",
                 "-fstack-protector",
-                "-Wl,--stack=268435456",
+                "-Wl,--stack,268435456",
                 "-D_GLIBCXX_ASSERTIONS",
                 "-fdiagnostics-color=always",
                 "-g",
