@@ -40,7 +40,7 @@
                 // "-fsanitize=undefined",
                 // "-fno-sanitize-recover",
                 "-fstack-protector",
-                "-Wl,--stack=268435456"
+                "-Wl,--stack,268435456"
             ]
         }
     ],
