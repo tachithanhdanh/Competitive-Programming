@@ -34,18 +34,12 @@ const ll INF = 1e18; // Not too close to LLONG_MAX
 const int dx[4] = {1, 0, -1, 0}, dy[4] = {0, 1, 0, -1}; // for every grid problem!!
 const char dc[4] = {'r', 'u', 'l', 'd'};
 
-void solve() {
-	
-}
-
 int main() {
 	cin.tie(0)->sync_with_stdio(0); // see /general/fast-io
 	#ifdef LOCAL
 	freopen("input.txt", "r", stdin);
 	#endif // LOCAL
-	int t = 1;
-	cin >> t;
-	while (t--)
-		solve();
+	// Your solution goes here.
+	
  	return 0;
 }
