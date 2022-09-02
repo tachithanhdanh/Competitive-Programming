@@ -28,18 +28,26 @@ template<typename T> bool ckmax(T& a, const T& b) { return b > a ? a = b, 1 : 0;
 
 // constant initialization
 const str yes="YES\n", no="NO\n";
-const int MOD = 1e9 + 7; // 998244353;
-const int MX = 2e4 + 10;
-const ll INF = 1e18; // Not too close to LLONG_MAX
+const int MOD = 1e9 + 7; // 998244353
+const int MX = 2e5 + 10;
+const ll INF = 1e18; //Not too close to LLONG_MAX
 const int dx[4] = {1, 0, -1, 0}, dy[4] = {0, 1, 0, -1}; // for every grid problem!!
 const char dc[4] = {'r', 'u', 'l', 'd'};
+const bool multitest = true;
+
+void solve() {
+	
+}
 
 int main() {
 	cin.tie(0)->sync_with_stdio(0); // see /general/fast-io
 	#ifdef LOCAL
 	freopen("input.txt", "r", stdin);
 	#endif // LOCAL
-	// Your solution goes here.
-	
- 	return 0;
+	int tt = 1;
+	if (multitest) cin >> tt;
+	for (int t = 0; t < tt; ++t) {
+		solve();
+	}
+	return 0;
 }
