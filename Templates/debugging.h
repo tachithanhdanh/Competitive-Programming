@@ -14,7 +14,7 @@ std::ostream& operator<<(std::ostream& out, const std::vector<T>& vec) {
         return out;
     }
     out << '[';
-    for (int i = 0; i < vec.size() - 1; i++) {
+    for (int i = 0; i < int(vec.size()) - 1; i++) {
         out << vec[i] << ", ";
     }
     return out << vec.back() << ']';
@@ -32,7 +32,7 @@ std::ostream& operator<<(std::ostream& out, const std::deque<T>& deq) {
         return out;
     }
     out << '[';
-    for (int i = 0; i < deq.size() - 1; i++) {
+    for (int i = 0; i < int(deq.size()) - 1; i++) {
         out << deq[i] << ", ";
     }
     return out << deq.back() << ']';
