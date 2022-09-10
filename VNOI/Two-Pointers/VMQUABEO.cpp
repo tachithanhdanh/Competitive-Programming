@@ -49,7 +49,7 @@ const bool multitest = false;
 // bây giờ ở phần xử lí đầu tiên
 // gọi delta = max(H(l, r)) - min(H(l, r))
 // trong TH delta > D
-// thì khi đó chúng ta sẽ trượt con trỏ l 
+// thì khi đó chúng ta sẽ trượt con trỏ l và đồng thời xóa H[l] ra khỏi multiset
 // cho đến khi delta <= D
 // rồi sau đó đến phần xử lí thứ 2
 // nếu r - l >= L (tức là đoạn từ l đến r có độ dài >= L)
