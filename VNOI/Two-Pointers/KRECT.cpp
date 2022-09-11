@@ -60,8 +60,8 @@ void solve() {
 			a[i][j] = int(c - 'A');
 		}
 	}
-	function<ll(const int&)> countRects = [&] (const int& maxDifAllowed) -> ll {
-		ll numRects = 0;
+	function<int(const int&)> countRects = [&] (const int& maxDifAllowed) -> int {
+		int numRects = 0;
 		for (int r2 = 0; r2 < M; ++r2) {
 			for (int r1 = 0; r1 <= r2; ++r1) {
 				int countCharacters[26]{};
@@ -91,8 +91,8 @@ void solve() {
 		}
 		return numRects;
 	};
-	ll countRectsLessThanOrEqualK = countRects(K);
-	ll countRectsLessThanK = countRects(K - 1);
+	int countRectsLessThanOrEqualK = countRects(K);
+	int countRectsLessThanK = countRects(K - 1);
 	cout << countRectsLessThanOrEqualK - countRectsLessThanK;
 }
 
