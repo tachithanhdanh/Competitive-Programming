@@ -44,6 +44,10 @@ const int dx[4] = {1, 0, -1, 0}, dy[4] = {0, 1, 0, -1}; // for every grid proble
 const char dc[4] = {'r', 'u', 'l', 'd'};
 const bool multitest = false;
 
+// Đây là phiên bản 2D của bài Khai bút đầu xuân - SOPENP
+// Bản dễ - aka bản 1D ở đây: https://oj.vnoi.info/problem/sopenp
+// Bài này có phiên bản khó hơn với N, M <= 400, đó là bài CRECT
+// link bài CRECT: https://oj.vnoi.info/problem/crect
 // Ý tưởng: chọn cố định 2 hàng r1 r2 rồi sau đó chạy 2 con trỏ c1, c2 trên cột
 // r1 <= r2, c1 <= c2
 // dùng mảng đếm cnt để đếm số kí tự khác nhau trong bảng 
