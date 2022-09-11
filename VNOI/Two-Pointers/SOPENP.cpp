@@ -62,7 +62,7 @@ void solve() {
 		ll counts = 0;
 		for (int l = 0, r = 0; r < N; ++r) {
 			curNumDif += ++cnt[pos(X[r])] == 1;
-			while (curNumDif > numDif) {
+			while (l <= r && curNumDif > numDif) {
 				curNumDif -= --cnt[pos(X[l++])] == 0;
 			}
 			counts += r - l + 1;
