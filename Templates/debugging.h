@@ -7,6 +7,16 @@
  * Status: Maybe judiciously tested (I believe in USACO Content Manager, lol!)
  */
 
+#include <iostream>
+#include <vector>
+#include <deque>
+#include <map>
+#include <unordered_map>
+#include <set>
+#include <unordered_set>
+
+#define db(x) cout << (#x) << " = " << x << endl
+
 template <typename T>
 std::ostream& operator<<(std::ostream& out, const std::vector<T>& vec) {
     if (vec.empty()) {
