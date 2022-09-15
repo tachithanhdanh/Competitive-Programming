@@ -15,7 +15,9 @@
 #include <set>
 #include <unordered_set>
 
-#define db(x) cout << (#x) << " = " << x << endl
+#define db(x) cout << "[" << __FILE_NAME__ << ":" << __LINE__ \
+		<< " (" << __func__ << ")] " \
+			<<  (#x) << " = " << x << endl
 
 template <typename T>
 std::ostream& operator<<(std::ostream& out, const std::vector<T>& vec) {
