@@ -1,6 +1,12 @@
 #include <bits/stdc++.h> // see /general/running-code-locally
 using namespace std;
 
+#ifdef LOCAL
+#include "debugging.h"
+#else
+#define db(x) 42
+#endif
+
 #define endl "\n"
 
 using ll = long long;
