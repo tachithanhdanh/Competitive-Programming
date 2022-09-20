@@ -1,23 +1,23 @@
 // Binary Indexed Tree (Fenwick Tree) 
 template<class T>
 struct Fenwick {
-	int size;
+	int SZ;
 	vector<T> bit;
 	vector<T> arr;
 
 	// All elements are one-indexed.
-	Fenwick(int size): size(size), bit(size + 1), arr(size + 1) { }
+	Fenwick(int SIZE): SZ(SIZE), bit(SIZE + 1), arr(SIZE + 1) { }
 	
 	// Adds val to the element at index idx.
-	void add(int idx, int val) {
+	void add(int idx, T val) {
 		arr[idx] += val;
-		for (; idx > 0; idx += idx & (-idx)) {
+		for (; idx <= SZ; idx += idx & (-idx)) {
 			bit[idx] += val;
 		}
 	}
 
 	// Sets the value at index idx to val.
-	void set(int idx, int val) {
+	void set(int idx, T val) {
 		add(idx, val - arr[idx]);
 	}
 
@@ -29,4 +29,4 @@ struct Fenwick {
 		}
 		return ans;
 	}
-}
+};
