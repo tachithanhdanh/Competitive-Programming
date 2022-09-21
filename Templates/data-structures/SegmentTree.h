@@ -83,7 +83,7 @@ struct SegTree {
 		T get1 = get(id * 2, l, mid, u, v);
 		T get2 = get(id * 2 + 1, mid + 1, r, u, v);
 
-		// Trả ra giá trị nhỏ nhất theo 2 nút con
+		// Trả ra giá trị của hàm comb theo 2 nút con
 		return comb(get1, get2);
 	}
 };
