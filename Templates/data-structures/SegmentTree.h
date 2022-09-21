@@ -6,6 +6,8 @@
 // - https://usaco.guide/gold/PURS?lang=cpp#segment-tree
 template<typename T, const T DEFAULT>
 struct SegTree {
+	// Phải tự viết lại hàm trong đây vì template không truyền được con trỏ hàm
+	//   https://stackoverflow.com/a/36945951
 	// hàm comb phải có tính kết hợp (max, min, sum, __gcd, ...)
 	T comb(const T& T1, const T& T2) {
 		return (T1 + T2); 
@@ -14,6 +16,7 @@ struct SegTree {
 		// return __gcd<T>(T1, T2);
 	}
 
+	// https://stackoverflow.com/questions/1828037/whats-the-point-of-g-wreorder
 	int n;
 	vector<T> a;
 	vector<T> segtree;
@@ -83,7 +86,7 @@ struct SegTree {
 		T get1 = get(id * 2, l, mid, u, v);
 		T get2 = get(id * 2 + 1, mid + 1, r, u, v);
 
-		// Trả ra giá trị của hàm comb theo 2 nút con
+		// Trả ra giá trị nhỏ nhất theo 2 nút con
 		return comb(get1, get2);
 	}
 };
