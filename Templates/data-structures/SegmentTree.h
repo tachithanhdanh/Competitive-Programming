@@ -7,7 +7,7 @@
 // Cách sử dụng:
 //   Khai báo: 
 //     Định nghĩa hàm lambda nào đó: auto comb = []() {};
-//     SegTree<T, value, comb> ST(SIZE);
+//     SegTree<T, value> ST(SIZE, comb);
 //   Dùng hàm:
 //     ST.build(1, 1, SIZE); (xây dựng cây phân đoạn)
 //     ST.update(vị trí cần cập nhật, giá trị);
