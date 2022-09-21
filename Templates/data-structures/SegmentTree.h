@@ -15,13 +15,13 @@
 template<typename T, const T DEFAULT>
 struct SegTree {
 	// hàm comb phải có tính kết hợp (max, min, sum, __gcd, ...)
-	function<T(T, T)> comb;
+	function<T(const T&, const T&)> comb;
 
 	int n;
 	vector<T> a;
 	vector<T> segtree;
 
-	SegTree(int LEN, function<T(T, T)> c): 
+	SegTree(int LEN, function<T(const T&, const T&)> c): 
 		comb(c), n(LEN), a(LEN + 1), segtree(LEN * 4 + 10, DEFAULT) { }
 
 	// Thủ tục xây dựng cây phân đoạn
