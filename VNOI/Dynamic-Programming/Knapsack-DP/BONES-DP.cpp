@@ -58,17 +58,7 @@ void solve() {
 			}
 		}
 	}
-	// for (int& aa : a) cout << aa << endl;
-	int sum = accumulate(all(a), 0);
-	// db(sum);
-	int maxDP = *max_element(all(dp[3]));
-	for (int i = 3; i <= sum; ++i) {
-		assert(i <= 100);
-		if (dp[3][i] == maxDP) {
-			cout << i;
-			return;
-		}
-	}
+	cout << max_element(all(dp[3])) - begin(dp[3]);
 }
 
 int main() {
